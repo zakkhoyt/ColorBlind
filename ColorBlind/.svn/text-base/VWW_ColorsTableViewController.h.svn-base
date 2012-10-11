@@ -1,0 +1,20 @@
+//
+//  VWW_ColorsTableViewController.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+
+#import <UIKit/UIKit.h>
+#import "VWW_Colors.h"
+#import "NSNumber+htmlValue.h"
+#import "VWW_ColorTableCell.h"
+
+
+
+
+@interface VWW_ColorsTableViewController : UITableViewController <VWW_ColorsDelegate>
+
+@property (nonatomic, retain) VWW_Colors* colors;
+
+@end

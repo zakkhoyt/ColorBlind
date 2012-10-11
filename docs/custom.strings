@@ -1,0 +1,38 @@
+// 
+//  custom.strings
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/28/12.
+//
+//  This file contains default contents of UI labels.
+
+//****************************************************** VWW_ColorsTableViewController
+
+//****************************************************** VWW_ColorsSliderViewController
+
+//****************************************************** VWW_ColorsPickerViewController
+"VWW_ColorPickerViewController.lblColorName.text" = "No color selected yet";
+"VWW_ColorPickerViewController.lblColorDetails.text" = "Select a color by tapping an area of the image";
+
+//****************************************************** VWW_ColorsCameraViewController
+"VWW_ColorCameraViewController.lblColorName.text" = "No color selected yet";
+"VWW_ColorCameraViewController.lblColorDetails.text" = "Select a color by tapping an area of the camera preview";
+
+//****************************************************** VWW_AboutViewController
+"VWW_AboutViewController.lblAppTitle.text" = "Color Blind";
+
+"VWW_AboutViewController.lblAbout.text" = "Ever wonder what the exact color of an object is? Find out using 
+ColorBlind. This app lets you explore color spectrums in 4 different
+ways. Select one of the tabs at the bottom of the app:
+    * Table: Browse the colors by name with a quick preview.
+    * Sliders: Mix your own color with Red Green and Blue sliders.
+    * Picker: Select a pixel from a photo by touching it.
+    * Camera: Look at the world in real time using your camera.
+
+The list of colors used in this app was taken from: http://en.wikipedia.org/wiki/List_of_colors";
+
+"VWW_AboutViewController.lblNews.text" = "Official website: http://vaporwarewolf.com
+The rest of this label's text should be retrieved from web service";
+
+"VWW_ColorPickerViewController.lblColorName.text" = "";
+"VWW_ColorPickerViewController.lblColorDetails.text" = "";

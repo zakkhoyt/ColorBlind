@@ -1,0 +1,73 @@
+* Insert the ability to select images to choose colors from on picker view
+
+//* remove ivar delcarations
+
+* add ability to load different color files
+
+* move private methods to class extensions
+
+* add decription method to VWW_Color
+    * replace decription for string building in all view controllers
+
+//* App icons
+//    * iPad
+//    * iPhone
+
+* splash screen
+//    * iPad
+    * iPhone
+
+* Tab bar icons
+    * iPad
+    * iPhone
+    
+* Complete about tab
+    * iPad
+    * iPhone
+    * Use a strings file for a new different languages
+    * Update label with webservice contents
+
+* Complete table view
+//  * list index (quick scrolling)
+//    * change _data = self.data
+    * tap color to open VWW_ColorFullScreenPreview
+
+* Complete slider view
+    * tap color to open VWW_ColorFullScreenPreview
+
+* Complete color picker view
+//    * Figure out how to draw gradient
+    * Update display on pick
+    * tap color to open VWW_ColorFullScreenPreview
+
+* Implement protol, delegate, and owners
+    * App delegate
+    * table view
+    * slider view
+    * picker view
+    
+* Web service
+    * Implement getColors
+    * Implement getNews
+    
+* Get categories working
+
+//* Implement iPad storyboard
+
+* Remove hue
+
+* add man/woman modes
+
+* Check for memory leaks (use profile to look for leaks, etc..)
+
+//* Notification Center
+//    * Receiver
+//        * Addobserver
+//        * Removeobserver
+//        * callback function
+//    * Sender
+//        * Generate NCE on the fly
+        
+        
+        
+        

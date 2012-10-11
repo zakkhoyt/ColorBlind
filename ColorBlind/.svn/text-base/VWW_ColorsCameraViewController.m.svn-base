@@ -1,0 +1,66 @@
+//
+//  VWW_ColorsCameraViewViewController.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/23/12.
+//
+//
+
+#import "VWW_ColorsCameraViewController.h"
+
+@interface VWW_ColorsCameraViewController ()
+
+@end
+
+@implementation VWW_ColorsCameraViewController
+@synthesize colors;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+-(void)dealloc{
+    // Stop receiving notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // Register to get updates when any other controller changes colors.currentColor
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveCurrentColorChangeNotification:)
+                                                 name:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]
+                                               object:nil];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Implements VWW_ColorProtocol
+
+- (void) receiveCurrentColorChangeNotification:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
+        NSDictionary *userInfo = notification.userInfo;
+        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
+    }
+}
+-(void)receiveColorListChangeNotification:(NSNotification*)notification{
+    if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_COLOR_LIST_CHANGED]])
+        NSLog (@"%s:%d Received notification for color list", __FUNCTION__, __LINE__);
+}
+
+
+@end

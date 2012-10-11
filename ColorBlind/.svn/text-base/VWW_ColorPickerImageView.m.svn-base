@@ -1,0 +1,95 @@
+//
+//  VWW_ColorPickerImageView.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/20/12.
+//
+//
+
+#import "VWW_ColorPickerImageView.h"
+
+@implementation VWW_ColorPickerImageView
+@synthesize colors;
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+#pragma mark UIView touch events
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self touchEvent:touches withEvent:event];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self touchEvent:touches withEvent:event];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    // Todo: do we need to call touchEvent here?
+}
+
+#pragma mark Custom methods
+
+- (void)touchEvent:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint point = [touch locationInView:self];
+    
+
+    // This will catch if the user dragged their finger out of bounds of the UIImageView
+    // Return so we dont' try to index outside of the images's memory
+    if (!CGRectContainsPoint(self.bounds, point)){
+        return;
+    }
+    
+    [self getColorOfPixelAtPoint:point];
+}
+
+
+// Examine the pixel under the user's finger to get the color
+-(VWW_Color*)getColorOfPixelAtPoint:(CGPoint)point{
+
+    // TODO: Find a more elegant way to handle this problem.
+    // During test of this functionality, it worked great on the simulator.
+    // However on devices with retina displays, it only only looks up the correct value for even pixels.
+    // At first I though it was due to the half pixels, so I rounded them off. However, the same problem persisted.
+    // I then decided to use only the even pixels as a solution for the time being. No one is going to notice such
+    // a small area while using thier finger to select a pixel.
+    int x = (int)round(point.x);
+    int y = (int)round(point.y);
+    if(x % 2 != 0) x-=1;
+    if(y % 2 != 0) y-=1;
+    
+    UIImage* image = self.image;
+    CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));
+    const UInt8* data = CFDataGetBytePtr(pixelData);
+    
+    // This may not work for all image types. Confirmed with png.
+    int pixelIndex = ((image.size.width * y) + x) * 4;
+    
+    UInt8 red = data[pixelIndex];
+    UInt8 green = data[(pixelIndex + 1)];
+    UInt8 blue = data[pixelIndex + 2];
+//    UInt8 alpha = data[pixelIndex + 3];
+    
+//    NSLog(@"w=%d h=%d x=%d y=%d r=%x g=%x b=%x", (int)image.size.width, (int)image.size.height, x, y, red, green, blue);
+    
+    // Our rgb data is currently 0.0-1.0. Cast to 0-100
+    VWW_Color* color = [self.colors colorFromRed:[NSNumber numberWithInteger:(NSUInteger)red*(100/255.0)]
+                                                                         Green:[NSNumber numberWithInteger:(NSUInteger)green*(100/255.0)]
+                                                                          Blue:[NSNumber numberWithInteger:(NSUInteger)blue*(100/255.0)]];
+    // Tell our delegate of the color at pixel
+    if(self.delegate){
+        [self.delegate userSelectedPixelWithColor:color];
+    }
+    
+    CFRelease(pixelData);
+    
+    return color;
+}
+
+@end

@@ -1,0 +1,24 @@
+//
+//  VWW_ColorsPickerViewController.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+//
+
+#import <UIKit/UIKit.h>
+#import "VWW_Colors.h"
+#import "VWW_ColorPickerView.h"
+#import "VWW_ColorPickerImageView.h"
+
+@interface VWW_ColorsPickerViewController : UIViewController <VWW_ColorsDelegate, VWW_ColorPickerImageViewDelegate>
+
+@property (nonatomic, retain) VWW_Colors* colors;
+@property (nonatomic, retain) IBOutlet VWW_ColorPickerImageView* colorPickerImageView;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblColorName;
+@property (retain, nonatomic) IBOutlet UILabel *lblColorDetails;
+@property (retain, nonatomic) IBOutlet VWW_ColorPickerView *currentColorView;
+
+
+@end

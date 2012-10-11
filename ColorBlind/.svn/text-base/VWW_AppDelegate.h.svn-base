@@ -1,0 +1,23 @@
+//
+//  VWW_AppDelegate.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+
+#import <UIKit/UIKit.h>
+#import "VWW_FileReader.h"
+#import "VWW_Colors.h"
+#import "VWW_AboutViewController.h"
+#import "VWW_ColorsTableViewController.h"
+#import "VWW_ColorsSliderViewController.h"
+#import "VWW_ColorsPickerViewController.h"
+#import "VWW_ColorsCameraViewController.h"
+#import "VWW_WebService.h"
+
+@interface VWW_AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (nonatomic, retain) VWW_Colors* colors;
+@property (retain, nonatomic) UIWindow *window;
+
+@end

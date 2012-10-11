@@ -1,0 +1,166 @@
+//
+//  VWW_ColorsSliderViewController.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+
+#import "VWW_ColorsSliderViewController.h"
+
+@implementation VWW_ColorsSliderViewController
+@synthesize colors = _colors;
+@synthesize sliderRed = _sliderRed;
+@synthesize sliderGreen = _sliderGreen;
+@synthesize sliderBlue = _sliderBlue;
+@synthesize colorView = _colorView;
+@synthesize colorName = _colorName;
+@synthesize colorDetails = _colorDetails;
+@synthesize currentRed = _currentRed;
+@synthesize currentGreen = _currentGreen;
+@synthesize currentBlue = _currentBlue;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+
+#pragma mark - Implements VWW_ColorProtocol
+
+- (void) receiveCurrentColorChangeNotification:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
+        NSDictionary *userInfo = notification.userInfo;
+        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
+    }
+}
+-(void)receiveColorListChangeNotification:(NSNotification*)notification{
+    if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_COLOR_LIST_CHANGED]])
+        NSLog (@"%s:%d Received notification for color list", __FUNCTION__, __LINE__);
+}
+
+#pragma mark - View lifecycle
+
+/*
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+}
+*/
+
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // TODO: Fix this once the protocol is in place to track current color across all view controllers
+    [self updateDisplay:self.colors.currentColor];
+
+    self.currentRed = self.colors.currentColor.red.integerValue;
+    self.currentGreen = self.colors.currentColor.green.integerValue;
+    self.currentBlue = self.colors.currentColor.blue.integerValue;
+    
+    
+    self.sliderRed.value = self.currentRed/100.0f;
+    self.sliderGreen.value = self.currentGreen/100.0f;
+    self.sliderBlue.value = self.currentBlue/100.0f;
+    
+    // Register to get updates when any other controller changes colors.currentColor
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveCurrentColorChangeNotification:)
+                                                 name:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]
+                                               object:nil];
+        
+}
+
+
+- (void)viewDidUnload
+{
+    [self setSliderRed:nil];
+    [self setSliderGreen:nil];
+    [self setSliderBlue:nil];
+    [self setColorView:nil];
+    [self setColorName:nil];
+    [self setColorDetails:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)dealloc {
+    // Stop receiving notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [_sliderRed release];
+    [_sliderGreen release];
+    [_sliderBlue release];
+    [_colorView release];
+    [_colorName release];
+    [_colorDetails release];
+    [super dealloc];
+}
+
+
+-(void)updateDisplay:(VWW_Color*)currentColor{
+    self.colorView.backgroundColor = currentColor.color;
+    self.colorName.text = currentColor.name;
+    self.colorDetails.text = [NSString stringWithFormat:@"hex:#%@\nred:%d\ngreen:%d\nblue:%d\nhue:%d",
+                              currentColor.hex, 
+                              currentColor.red.integerValue, 
+                              currentColor.green.integerValue, 
+                              currentColor.blue.integerValue, 
+                              currentColor.hue.integerValue];
+}
+
+
+- (IBAction)handle_sliderRed:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    self.currentRed = slider.value * 100;
+    VWW_Color* closestColor = [self.colors colorFromRed:[NSNumber numberWithInteger:self.currentRed]
+                                                  Green:[NSNumber numberWithInteger:self.currentGreen]
+                                                   Blue:[NSNumber numberWithInteger:self.currentBlue]];
+    
+    [self.colors setCurrentColor:closestColor];
+    [self updateDisplay:closestColor];
+}
+
+- (IBAction)handle_sliderGreen:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    self.currentGreen = slider.value * 100;
+    VWW_Color* closestColor = [self.colors colorFromRed:[NSNumber numberWithInteger:self.currentRed]
+                                                  Green:[NSNumber numberWithInteger:self.currentGreen]
+                                                   Blue:[NSNumber numberWithInteger:self.currentBlue]];
+    [self.colors setCurrentColor:closestColor];
+    [self updateDisplay:closestColor];
+}
+
+- (IBAction)handle_sliderBlue:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    self.currentBlue = slider.value * 100;
+    VWW_Color* closestColor = [self.colors colorFromRed:[NSNumber numberWithInteger:self.currentRed]
+                                                  Green:[NSNumber numberWithInteger:self.currentGreen]
+                                                   Blue:[NSNumber numberWithInteger:self.currentBlue]];
+    [self.colors setCurrentColor:closestColor];
+    [self updateDisplay:closestColor];
+}
+@end

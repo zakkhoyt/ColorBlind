@@ -1,0 +1,33 @@
+//
+//  VWW_ColorTableCell.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+
+#import "VWW_ColorTableCell.h"
+
+@implementation VWW_ColorTableCell
+@synthesize nameLabel, hexLabel, redLabel, greenLabel, blueLabel, hueLabel, colorView;
+
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+#pragma mark Custom methods
+
+
+@end

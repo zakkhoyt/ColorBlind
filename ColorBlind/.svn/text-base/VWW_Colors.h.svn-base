@@ -1,0 +1,30 @@
+//
+//  VWW_Colors.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/23/12.
+//
+//
+
+#import <Foundation/Foundation.h>
+#import "VWW_Color.h"
+#import "VWW_ColorsProtocol.h"
+#import "VWW_FileReader.h"
+
+@interface VWW_Colors : NSObject{
+    // We need to write our own setter/getter for this class
+    // See setter/getter declaration below
+    VWW_Color* _currentColor;
+}
+
+@property (nonatomic, retain) NSMutableArray* colors;
+
+-(VWW_Color*)colorAtIndex:(NSUInteger)index;
+-(VWW_Color*)colorFromRed:(NSNumber*)red Green:(NSNumber*)green Blue:(NSNumber*)blue;
+-(NSUInteger)count;
+-(VWW_Color*)randomColor;
+
+-(VWW_Color*)currentColor;
+-(bool)setCurrentColor:(VWW_Color*)currentColor;
+
+@end

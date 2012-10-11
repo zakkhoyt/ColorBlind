@@ -1,0 +1,16 @@
+//
+//  VWW_ColorsCameraViewViewController.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/23/12.
+//
+//
+
+#import <UIKit/UIKit.h>
+#import "VWW_Colors.h"
+
+@interface VWW_ColorsCameraViewController : UIViewController <VWW_ColorsDelegate>
+
+@property (nonatomic, retain) VWW_Colors* colors;
+
+@end

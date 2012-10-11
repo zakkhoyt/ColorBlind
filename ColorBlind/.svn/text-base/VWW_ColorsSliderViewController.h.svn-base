@@ -1,0 +1,32 @@
+//
+//  VWW_ColorsSliderViewController.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+
+#import <UIKit/UIKit.h>
+#import "VWW_Colors.h"
+
+@interface VWW_ColorsSliderViewController : UIViewController <VWW_ColorsDelegate>
+
+@property (nonatomic, retain) VWW_Colors*           colors;
+@property (retain, nonatomic) IBOutlet UISlider*    sliderRed;
+@property (retain, nonatomic) IBOutlet UISlider*    sliderGreen;
+@property (retain, nonatomic) IBOutlet UISlider*    sliderBlue;
+@property (retain, nonatomic) IBOutlet UIView*      colorView;
+@property (retain, nonatomic) IBOutlet UILabel*     colorName;
+@property (retain, nonatomic) IBOutlet UILabel*     colorDetails;
+@property NSUInteger                                currentRed;
+@property NSUInteger                                currentGreen;
+@property NSUInteger                                currentBlue;
+
+-(void)updateDisplay:(VWW_Color*)closestColor;
+
+- (IBAction)handle_sliderRed:(id)sender;
+- (IBAction)handle_sliderGreen:(id)sender;
+- (IBAction)handle_sliderBlue:(id)sender;
+
+
+
+@end

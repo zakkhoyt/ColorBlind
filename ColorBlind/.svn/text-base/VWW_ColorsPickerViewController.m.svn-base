@@ -1,0 +1,116 @@
+//
+//  VWW_ColorsPickerViewController.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+//
+
+#import "VWW_ColorsPickerViewController.h"
+
+//@interface VWW_ColorsPickerViewController ()
+//
+//@end
+
+@implementation VWW_ColorsPickerViewController
+@synthesize lblColorName = _lblColorName;
+@synthesize lblColorDetails = _lblColorDetails;
+@synthesize currentColorView = _currentColorView;
+@synthesize colors = _colors;
+@synthesize colorPickerImageView = _colorPickerImageView;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+
+    }
+    return self;
+}
+
+-(void)dealloc{
+    // Stop receiving notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_lblColorName release];
+    [_lblColorDetails release];
+    [_currentColorView release];
+    [super dealloc];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Share our data with child controls
+    self.colorPickerImageView.colors = self.colors;
+    self.colorPickerImageView.delegate = self;
+
+    // Register to get updates when any other controller changes colors.currentColor
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveCurrentColorChangeNotification:)
+                                                 name:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]
+                                               object:nil];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+
+
+#pragma mark - Implements VWW_ColorDelegate
+
+- (void) receiveCurrentColorChangeNotification:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
+        NSDictionary *userInfo = notification.userInfo;
+        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
+    }
+}
+-(void)receiveColorListChangeNotification:(NSNotification*)notification{
+    if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_COLOR_LIST_CHANGED]])
+        NSLog (@"%s:%d Received notification for color list", __FUNCTION__, __LINE__);
+}
+
+
+#pragma mark - Implements VWW_ColorPickerImageViewDelegate
+
+-(void)userSelectedPixelWithColor:(VWW_Color*)color{
+
+    if(color){
+        self.lblColorName.text = color.name;
+        self.lblColorDetails.text = [NSString stringWithFormat:@"hex:#%@\nred:%d\ngreen:%d\nblue:%d\nhue:%d",
+                                  color.hex,
+                                  color.red.integerValue,
+                                  color.green.integerValue,
+                                  color.blue.integerValue,
+                                  color.hue.integerValue];
+        
+        self.currentColorView.backgroundColor = color.color;
+    }
+}
+
+
+
+
+#pragma mark Custom methods			
+
+
+- (void)viewDidUnload {
+    [self setLblColorName:nil];
+    [self setLblColorDetails:nil];
+    [self setCurrentColorView:nil];
+    [super viewDidUnload];
+}
+@end

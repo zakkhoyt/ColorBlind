@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C61007C415B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61007C315B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m */; };
+		C61007C915B7A5EE00DA6D8E /* VWW_ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61007C815B7A5EE00DA6D8E /* VWW_ColorView.m */; };
+		C6153E3415B9518F008C6B72 /* VWW_ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6153E3315B9518F008C6B72 /* VWW_ColorPickerImageView.m */; };
+		C6153E3F15B9FD63008C6B72 /* map-saturation-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = C6153E3B15B9FD63008C6B72 /* map-saturation-iPad.png */; };
+		C6153E4115B9FD63008C6B72 /* map-saturation-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6153E3D15B9FD63008C6B72 /* map-saturation-iPhone.png */; };
+		C61FA62815B9310C0042E728 /* VWW_AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FA62215B9310C0042E728 /* VWW_AboutViewController.m */; };
+		C61FA62A15B9310C0042E728 /* VWW_WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = C61FA62715B9310C0042E728 /* VWW_WebService.m */; };
+		C6295FB315B7AFA3009B2306 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6295FB215B7AFA3009B2306 /* todo.txt */; };
+		C6295FBF15B7B337009B2306 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FBE15B7B337009B2306 /* Icon@2x.png */; };
+		C6295FC115B7B346009B2306 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FC015B7B346009B2306 /* Icon.png */; };
+		C6295FC315B7B3BE009B2306 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FC215B7B3BE009B2306 /* Icon-72.png */; };
+		C6295FC515B7B410009B2306 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FC415B7B410009B2306 /* Icon-144.png */; };
+		C6295FCB15B7B8A8009B2306 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FC815B7B646009B2306 /* Default.png */; };
+		C6295FCC15B7B8B5009B2306 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FC615B7B60D009B2306 /* Default@2x.png */; };
+		C6295FCE15B7B8BF009B2306 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FCD15B7B8BF009B2306 /* Default-Portrait~ipad.png */; };
+		C6295FD015B7B8C6009B2306 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C6295FCF15B7B8C6009B2306 /* Default-Portrait@2x~ipad.png */; };
+		C65991E815BE4BEE0025C610 /* VWW_Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = C65991E715BE4BEE0025C610 /* VWW_Colors.m */; };
+		C65991EB15BE58060025C610 /* VWW_ColorsCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C65991EA15BE58060025C610 /* VWW_ColorsCameraViewController.m */; };
+		C662A71715B73D4500F4E48F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C662A71615B73D4500F4E48F /* UIKit.framework */; };
+		C662A71915B73D4500F4E48F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C662A71815B73D4500F4E48F /* Foundation.framework */; };
+		C662A71B15B73D4500F4E48F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C662A71A15B73D4500F4E48F /* CoreGraphics.framework */; };
+		C662A72115B73D4500F4E48F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C662A71F15B73D4500F4E48F /* InfoPlist.strings */; };
+		C662A72315B73D4500F4E48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A72215B73D4500F4E48F /* main.m */; };
+		C662A72715B73D4500F4E48F /* VWW_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A72615B73D4500F4E48F /* VWW_AppDelegate.m */; };
+		C662A72A15B73D4500F4E48F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C662A72815B73D4500F4E48F /* MainStoryboard_iPhone.storyboard */; };
+		C662A72D15B73D4500F4E48F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C662A72B15B73D4500F4E48F /* MainStoryboard_iPad.storyboard */; };
+		C662A73815B73D4500F4E48F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C662A73715B73D4500F4E48F /* SenTestingKit.framework */; };
+		C662A73915B73D4500F4E48F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C662A71615B73D4500F4E48F /* UIKit.framework */; };
+		C662A73A15B73D4500F4E48F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C662A71815B73D4500F4E48F /* Foundation.framework */; };
+		C662A74215B73D4500F4E48F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C662A74015B73D4500F4E48F /* InfoPlist.strings */; };
+		C662A75D15B741F500F4E48F /* VWW_Color.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A75C15B741F500F4E48F /* VWW_Color.m */; };
+		C662A76215B744A900F4E48F /* VWW_FileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A76115B744A900F4E48F /* VWW_FileReader.m */; };
+		C662A76515B754B900F4E48F /* VWW_ColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A76415B754B900F4E48F /* VWW_ColorsTableViewController.m */; };
+		C662A76C15B7894600F4E48F /* NSNumber+htmlValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A76B15B7894600F4E48F /* NSNumber+htmlValue.m */; };
+		C662A77215B78C5400F4E48F /* VWW_ColorTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A77115B78C5400F4E48F /* VWW_ColorTableCell.m */; };
+		C662A77515B791A900F4E48F /* VWW_ColorsSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */; };
+		C6D98D1615C23AC7002A85F0 /* VWW_Colors_unittest.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D98D1515C23AC7002A85F0 /* VWW_Colors_unittest.m */; };
+		C6D98D1815C23CE7002A85F0 /* ColorBlindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D98D1715C23CE7002A85F0 /* ColorBlindTests.m */; };
+		C6E45D4D15BE6D3A00626750 /* VWW_ColorViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E45D4C15BE6D3A00626750 /* VWW_ColorViewContoller.m */; };
+		C6E45D5215BE786E00626750 /* colors_m.csv in Resources */ = {isa = PBXBuildFile; fileRef = C6E45D5015BE786E00626750 /* colors_m.csv */; };
+		C6E45D5315BE786E00626750 /* colors_w.csv in Resources */ = {isa = PBXBuildFile; fileRef = C6E45D5115BE786E00626750 /* colors_w.csv */; };
+		C6F3338815B8BFD600477797 /* VWW_ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F3338715B8BFD600477797 /* VWW_ColorPickerView.m */; };
+		C6F3338D15B8C22B00477797 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6F3338C15B8C22B00477797 /* README.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C662A73B15B73D4500F4E48F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C662A70915B73D4400F4E48F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C662A71115B73D4400F4E48F;
+			remoteInfo = ColorBlind;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C61007C215B7A33F00DA6D8E /* VWW_ColorsPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsPickerViewController.h; sourceTree = "<group>"; };
+		C61007C315B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsPickerViewController.m; sourceTree = "<group>"; };
+		C61007C515B7A4CC00DA6D8E /* VWW_ColorsProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsProtocol.h; sourceTree = "<group>"; };
+		C61007C715B7A5EE00DA6D8E /* VWW_ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorView.h; sourceTree = "<group>"; };
+		C61007C815B7A5EE00DA6D8E /* VWW_ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorView.m; sourceTree = "<group>"; };
+		C6153E3215B9518F008C6B72 /* VWW_ColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorPickerImageView.h; sourceTree = "<group>"; };
+		C6153E3315B9518F008C6B72 /* VWW_ColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorPickerImageView.m; sourceTree = "<group>"; };
+		C6153E3B15B9FD63008C6B72 /* map-saturation-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-saturation-iPad.png"; path = "images/map-saturation-iPad.png"; sourceTree = "<group>"; };
+		C6153E3D15B9FD63008C6B72 /* map-saturation-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-saturation-iPhone.png"; path = "images/map-saturation-iPhone.png"; sourceTree = "<group>"; };
+		C61FA62115B9310C0042E728 /* VWW_AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_AboutViewController.h; sourceTree = "<group>"; };
+		C61FA62215B9310C0042E728 /* VWW_AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_AboutViewController.m; sourceTree = "<group>"; };
+		C61FA62315B9310C0042E728 /* VWW_ColorBlind_Configurations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorBlind_Configurations.h; sourceTree = "<group>"; };
+		C61FA62615B9310C0042E728 /* VWW_WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_WebService.h; sourceTree = "<group>"; };
+		C61FA62715B9310C0042E728 /* VWW_WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_WebService.m; sourceTree = "<group>"; };
+		C6295FB215B7AFA3009B2306 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		C6295FBE15B7B337009B2306 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C6295FC015B7B346009B2306 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C6295FC215B7B3BE009B2306 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		C6295FC415B7B410009B2306 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
+		C6295FC615B7B60D009B2306 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C6295FC815B7B646009B2306 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C6295FCD15B7B8BF009B2306 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		C6295FCF15B7B8C6009B2306 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		C65991E615BE4BEE0025C610 /* VWW_Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_Colors.h; sourceTree = "<group>"; };
+		C65991E715BE4BEE0025C610 /* VWW_Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_Colors.m; sourceTree = "<group>"; };
+		C65991E915BE58060025C610 /* VWW_ColorsCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsCameraViewController.h; sourceTree = "<group>"; };
+		C65991EA15BE58060025C610 /* VWW_ColorsCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsCameraViewController.m; sourceTree = "<group>"; };
+		C662A71215B73D4500F4E48F /* ColorBlind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBlind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C662A71615B73D4500F4E48F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C662A71815B73D4500F4E48F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C662A71A15B73D4500F4E48F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C662A71E15B73D4500F4E48F /* ColorBlind-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColorBlind-Info.plist"; sourceTree = "<group>"; };
+		C662A72015B73D4500F4E48F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C662A72215B73D4500F4E48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C662A72415B73D4500F4E48F /* ColorBlind-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorBlind-Prefix.pch"; sourceTree = "<group>"; };
+		C662A72515B73D4500F4E48F /* VWW_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWW_AppDelegate.h; sourceTree = "<group>"; };
+		C662A72615B73D4500F4E48F /* VWW_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWW_AppDelegate.m; sourceTree = "<group>"; };
+		C662A72915B73D4500F4E48F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C662A72C15B73D4500F4E48F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		C662A73615B73D4500F4E48F /* ColorBlindTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBlindTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C662A73715B73D4500F4E48F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C662A73F15B73D4500F4E48F /* ColorBlindTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColorBlindTests-Info.plist"; sourceTree = "<group>"; };
+		C662A74115B73D4500F4E48F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C662A75B15B741F500F4E48F /* VWW_Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_Color.h; sourceTree = "<group>"; };
+		C662A75C15B741F500F4E48F /* VWW_Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_Color.m; sourceTree = "<group>"; };
+		C662A76015B744A900F4E48F /* VWW_FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_FileReader.h; sourceTree = "<group>"; };
+		C662A76115B744A900F4E48F /* VWW_FileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_FileReader.m; sourceTree = "<group>"; };
+		C662A76315B754B900F4E48F /* VWW_ColorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsTableViewController.h; sourceTree = "<group>"; };
+		C662A76415B754B900F4E48F /* VWW_ColorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsTableViewController.m; sourceTree = "<group>"; };
+		C662A76A15B7894600F4E48F /* NSNumber+htmlValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+htmlValue.h"; sourceTree = "<group>"; };
+		C662A76B15B7894600F4E48F /* NSNumber+htmlValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+htmlValue.m"; sourceTree = "<group>"; };
+		C662A77015B78C5300F4E48F /* VWW_ColorTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorTableCell.h; sourceTree = "<group>"; };
+		C662A77115B78C5400F4E48F /* VWW_ColorTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorTableCell.m; sourceTree = "<group>"; };
+		C662A77315B791A900F4E48F /* VWW_ColorsSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsSliderViewController.h; sourceTree = "<group>"; };
+		C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsSliderViewController.m; sourceTree = "<group>"; };
+		C6D98D1415C23AC7002A85F0 /* VWW_Colors_unittest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_Colors_unittest.h; sourceTree = "<group>"; };
+		C6D98D1515C23AC7002A85F0 /* VWW_Colors_unittest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_Colors_unittest.m; sourceTree = "<group>"; };
+		C6D98D1715C23CE7002A85F0 /* ColorBlindTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorBlindTests.m; sourceTree = "<group>"; };
+		C6D98D1915C23CED002A85F0 /* ColorBlindTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorBlindTests.h; sourceTree = "<group>"; };
+		C6E45D4B15BE6D3A00626750 /* VWW_ColorViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorViewContoller.h; sourceTree = "<group>"; };
+		C6E45D4C15BE6D3A00626750 /* VWW_ColorViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorViewContoller.m; sourceTree = "<group>"; };
+		C6E45D5015BE786E00626750 /* colors_m.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors_m.csv; sourceTree = "<group>"; };
+		C6E45D5115BE786E00626750 /* colors_w.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors_w.csv; sourceTree = "<group>"; };
+		C6F3338615B8BFD600477797 /* VWW_ColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorPickerView.h; sourceTree = "<group>"; };
+		C6F3338715B8BFD600477797 /* VWW_ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorPickerView.m; sourceTree = "<group>"; };
+		C6F3338C15B8C22B00477797 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C662A70F15B73D4400F4E48F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C662A71715B73D4500F4E48F /* UIKit.framework in Frameworks */,
+				C662A71915B73D4500F4E48F /* Foundation.framework in Frameworks */,
+				C662A71B15B73D4500F4E48F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C662A73215B73D4500F4E48F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C662A73815B73D4500F4E48F /* SenTestingKit.framework in Frameworks */,
+				C662A73915B73D4500F4E48F /* UIKit.framework in Frameworks */,
+				C662A73A15B73D4500F4E48F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C61007C615B7A55900DA6D8E /* todo */ = {
+			isa = PBXGroup;
+			children = (
+				C6295FB215B7AFA3009B2306 /* todo.txt */,
+				C662A76A15B7894600F4E48F /* NSNumber+htmlValue.h */,
+				C662A76B15B7894600F4E48F /* NSNumber+htmlValue.m */,
+			);
+			name = todo;
+			sourceTree = "<group>";
+		};
+		C61FA62C15B931210042E728 /* VWW_AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C61FA62115B9310C0042E728 /* VWW_AboutViewController.h */,
+				C61FA62215B9310C0042E728 /* VWW_AboutViewController.m */,
+			);
+			name = VWW_AboutViewController;
+			sourceTree = "<group>";
+		};
+		C61FA62D15B9318B0042E728 /* VWW_ColorFullScreenPreview */ = {
+			isa = PBXGroup;
+			children = (
+				C6E45D4B15BE6D3A00626750 /* VWW_ColorViewContoller.h */,
+				C6E45D4C15BE6D3A00626750 /* VWW_ColorViewContoller.m */,
+				C61007C715B7A5EE00DA6D8E /* VWW_ColorView.h */,
+				C61007C815B7A5EE00DA6D8E /* VWW_ColorView.m */,
+			);
+			name = VWW_ColorFullScreenPreview;
+			sourceTree = "<group>";
+		};
+		C61FA62F15B931C20042E728 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C662A72B15B73D4500F4E48F /* MainStoryboard_iPad.storyboard */,
+				C662A72815B73D4500F4E48F /* MainStoryboard_iPhone.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C662A70715B73D4400F4E48F = {
+			isa = PBXGroup;
+			children = (
+				C6F3338C15B8C22B00477797 /* README.txt */,
+				C6F3338415B7D37400477797 /* images */,
+				C662A71C15B73D4500F4E48F /* ColorBlind */,
+				C662A73D15B73D4500F4E48F /* ColorBlindTests */,
+				C662A71515B73D4500F4E48F /* Frameworks */,
+				C662A71315B73D4500F4E48F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C662A71315B73D4500F4E48F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C662A71215B73D4500F4E48F /* ColorBlind.app */,
+				C662A73615B73D4500F4E48F /* ColorBlindTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C662A71515B73D4500F4E48F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C662A71615B73D4500F4E48F /* UIKit.framework */,
+				C662A71815B73D4500F4E48F /* Foundation.framework */,
+				C662A71A15B73D4500F4E48F /* CoreGraphics.framework */,
+				C662A73715B73D4500F4E48F /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C662A71C15B73D4500F4E48F /* ColorBlind */ = {
+			isa = PBXGroup;
+			children = (
+				C61007C615B7A55900DA6D8E /* todo */,
+				C662A75215B73DB100F4E48F /* docs */,
+				C6F3338915B8C01D00477797 /* VWW_ColorsTableView */,
+				C6F3338A15B8C03E00477797 /* VWW_ColorsSliderView */,
+				C6F3338B15B8C05200477797 /* VWW_ColorsPickerView */,
+				C6F3339115B8C79300477797 /* VWW_ColorsCameraView */,
+				C61FA62C15B931210042E728 /* VWW_AboutViewController */,
+				C61FA62D15B9318B0042E728 /* VWW_ColorFullScreenPreview */,
+				C662A72515B73D4500F4E48F /* VWW_AppDelegate.h */,
+				C662A72615B73D4500F4E48F /* VWW_AppDelegate.m */,
+				C61FA62315B9310C0042E728 /* VWW_ColorBlind_Configurations.h */,
+				C662A75B15B741F500F4E48F /* VWW_Color.h */,
+				C662A75C15B741F500F4E48F /* VWW_Color.m */,
+				C61007C515B7A4CC00DA6D8E /* VWW_ColorsProtocol.h */,
+				C65991E615BE4BEE0025C610 /* VWW_Colors.h */,
+				C65991E715BE4BEE0025C610 /* VWW_Colors.m */,
+				C662A76015B744A900F4E48F /* VWW_FileReader.h */,
+				C662A76115B744A900F4E48F /* VWW_FileReader.m */,
+				C61FA62615B9310C0042E728 /* VWW_WebService.h */,
+				C61FA62715B9310C0042E728 /* VWW_WebService.m */,
+				C61FA62F15B931C20042E728 /* Storyboards */,
+				C662A71D15B73D4500F4E48F /* Supporting Files */,
+			);
+			path = ColorBlind;
+			sourceTree = "<group>";
+		};
+		C662A71D15B73D4500F4E48F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C662A71E15B73D4500F4E48F /* ColorBlind-Info.plist */,
+				C662A71F15B73D4500F4E48F /* InfoPlist.strings */,
+				C662A72215B73D4500F4E48F /* main.m */,
+				C662A72415B73D4500F4E48F /* ColorBlind-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C662A73D15B73D4500F4E48F /* ColorBlindTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6D98D1915C23CED002A85F0 /* ColorBlindTests.h */,
+				C6D98D1715C23CE7002A85F0 /* ColorBlindTests.m */,
+				C6D98D1415C23AC7002A85F0 /* VWW_Colors_unittest.h */,
+				C6D98D1515C23AC7002A85F0 /* VWW_Colors_unittest.m */,
+				C662A73E15B73D4500F4E48F /* Supporting Files */,
+			);
+			path = ColorBlindTests;
+			sourceTree = "<group>";
+		};
+		C662A73E15B73D4500F4E48F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C662A73F15B73D4500F4E48F /* ColorBlindTests-Info.plist */,
+				C662A74015B73D4500F4E48F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C662A75215B73DB100F4E48F /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				C6E45D5015BE786E00626750 /* colors_m.csv */,
+				C6E45D5115BE786E00626750 /* colors_w.csv */,
+			);
+			path = docs;
+			sourceTree = SOURCE_ROOT;
+		};
+		C6F3338415B7D37400477797 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C6153E3B15B9FD63008C6B72 /* map-saturation-iPad.png */,
+				C6153E3D15B9FD63008C6B72 /* map-saturation-iPhone.png */,
+				C6295FCF15B7B8C6009B2306 /* Default-Portrait@2x~ipad.png */,
+				C6295FCD15B7B8BF009B2306 /* Default-Portrait~ipad.png */,
+				C6295FC815B7B646009B2306 /* Default.png */,
+				C6295FC615B7B60D009B2306 /* Default@2x.png */,
+				C6295FC415B7B410009B2306 /* Icon-144.png */,
+				C6295FC215B7B3BE009B2306 /* Icon-72.png */,
+				C6295FC015B7B346009B2306 /* Icon.png */,
+				C6295FBE15B7B337009B2306 /* Icon@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		C6F3338915B8C01D00477797 /* VWW_ColorsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C662A76315B754B900F4E48F /* VWW_ColorsTableViewController.h */,
+				C662A76415B754B900F4E48F /* VWW_ColorsTableViewController.m */,
+				C662A77015B78C5300F4E48F /* VWW_ColorTableCell.h */,
+				C662A77115B78C5400F4E48F /* VWW_ColorTableCell.m */,
+			);
+			name = VWW_ColorsTableView;
+			sourceTree = "<group>";
+		};
+		C6F3338A15B8C03E00477797 /* VWW_ColorsSliderView */ = {
+			isa = PBXGroup;
+			children = (
+				C662A77315B791A900F4E48F /* VWW_ColorsSliderViewController.h */,
+				C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */,
+			);
+			name = VWW_ColorsSliderView;
+			sourceTree = "<group>";
+		};
+		C6F3338B15B8C05200477797 /* VWW_ColorsPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C61007C215B7A33F00DA6D8E /* VWW_ColorsPickerViewController.h */,
+				C61007C315B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m */,
+				C6F3338615B8BFD600477797 /* VWW_ColorPickerView.h */,
+				C6F3338715B8BFD600477797 /* VWW_ColorPickerView.m */,
+				C6153E3215B9518F008C6B72 /* VWW_ColorPickerImageView.h */,
+				C6153E3315B9518F008C6B72 /* VWW_ColorPickerImageView.m */,
+			);
+			name = VWW_ColorsPickerView;
+			sourceTree = "<group>";
+		};
+		C6F3339115B8C79300477797 /* VWW_ColorsCameraView */ = {
+			isa = PBXGroup;
+			children = (
+				C65991E915BE58060025C610 /* VWW_ColorsCameraViewController.h */,
+				C65991EA15BE58060025C610 /* VWW_ColorsCameraViewController.m */,
+			);
+			name = VWW_ColorsCameraView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C662A71115B73D4400F4E48F /* ColorBlind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C662A74815B73D4500F4E48F /* Build configuration list for PBXNativeTarget "ColorBlind" */;
+			buildPhases = (
+				C662A70E15B73D4400F4E48F /* Sources */,
+				C662A70F15B73D4400F4E48F /* Frameworks */,
+				C662A71015B73D4400F4E48F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorBlind;
+			productName = ColorBlind;
+			productReference = C662A71215B73D4500F4E48F /* ColorBlind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C662A73515B73D4500F4E48F /* ColorBlindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C662A74B15B73D4500F4E48F /* Build configuration list for PBXNativeTarget "ColorBlindTests" */;
+			buildPhases = (
+				C662A73115B73D4500F4E48F /* Sources */,
+				C662A73215B73D4500F4E48F /* Frameworks */,
+				C662A73315B73D4500F4E48F /* Resources */,
+				C662A73415B73D4500F4E48F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C662A73C15B73D4500F4E48F /* PBXTargetDependency */,
+			);
+			name = ColorBlindTests;
+			productName = ColorBlindTests;
+			productReference = C662A73615B73D4500F4E48F /* ColorBlindTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C662A70915B73D4400F4E48F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C662A70C15B73D4400F4E48F /* Build configuration list for PBXProject "ColorBlind" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C662A70715B73D4400F4E48F;
+			productRefGroup = C662A71315B73D4500F4E48F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C662A71115B73D4400F4E48F /* ColorBlind */,
+				C662A73515B73D4500F4E48F /* ColorBlindTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C662A71015B73D4400F4E48F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C662A72115B73D4500F4E48F /* InfoPlist.strings in Resources */,
+				C662A72A15B73D4500F4E48F /* MainStoryboard_iPhone.storyboard in Resources */,
+				C662A72D15B73D4500F4E48F /* MainStoryboard_iPad.storyboard in Resources */,
+				C6295FB315B7AFA3009B2306 /* todo.txt in Resources */,
+				C6295FBF15B7B337009B2306 /* Icon@2x.png in Resources */,
+				C6295FC115B7B346009B2306 /* Icon.png in Resources */,
+				C6295FC315B7B3BE009B2306 /* Icon-72.png in Resources */,
+				C6295FC515B7B410009B2306 /* Icon-144.png in Resources */,
+				C6295FCB15B7B8A8009B2306 /* Default.png in Resources */,
+				C6295FCC15B7B8B5009B2306 /* Default@2x.png in Resources */,
+				C6295FCE15B7B8BF009B2306 /* Default-Portrait~ipad.png in Resources */,
+				C6295FD015B7B8C6009B2306 /* Default-Portrait@2x~ipad.png in Resources */,
+				C6F3338D15B8C22B00477797 /* README.txt in Resources */,
+				C6153E3F15B9FD63008C6B72 /* map-saturation-iPad.png in Resources */,
+				C6153E4115B9FD63008C6B72 /* map-saturation-iPhone.png in Resources */,
+				C6E45D5215BE786E00626750 /* colors_m.csv in Resources */,
+				C6E45D5315BE786E00626750 /* colors_w.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C662A73315B73D4500F4E48F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C662A74215B73D4500F4E48F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C662A73415B73D4500F4E48F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C662A70E15B73D4400F4E48F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C662A72315B73D4500F4E48F /* main.m in Sources */,
+				C662A72715B73D4500F4E48F /* VWW_AppDelegate.m in Sources */,
+				C662A75D15B741F500F4E48F /* VWW_Color.m in Sources */,
+				C662A76215B744A900F4E48F /* VWW_FileReader.m in Sources */,
+				C662A76515B754B900F4E48F /* VWW_ColorsTableViewController.m in Sources */,
+				C662A76C15B7894600F4E48F /* NSNumber+htmlValue.m in Sources */,
+				C662A77215B78C5400F4E48F /* VWW_ColorTableCell.m in Sources */,
+				C662A77515B791A900F4E48F /* VWW_ColorsSliderViewController.m in Sources */,
+				C61007C415B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m in Sources */,
+				C61007C915B7A5EE00DA6D8E /* VWW_ColorView.m in Sources */,
+				C6F3338815B8BFD600477797 /* VWW_ColorPickerView.m in Sources */,
+				C61FA62815B9310C0042E728 /* VWW_AboutViewController.m in Sources */,
+				C61FA62A15B9310C0042E728 /* VWW_WebService.m in Sources */,
+				C6153E3415B9518F008C6B72 /* VWW_ColorPickerImageView.m in Sources */,
+				C65991E815BE4BEE0025C610 /* VWW_Colors.m in Sources */,
+				C65991EB15BE58060025C610 /* VWW_ColorsCameraViewController.m in Sources */,
+				C6E45D4D15BE6D3A00626750 /* VWW_ColorViewContoller.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C662A73115B73D4500F4E48F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6D98D1615C23AC7002A85F0 /* VWW_Colors_unittest.m in Sources */,
+				C6D98D1815C23CE7002A85F0 /* ColorBlindTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C662A73C15B73D4500F4E48F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C662A71115B73D4400F4E48F /* ColorBlind */;
+			targetProxy = C662A73B15B73D4500F4E48F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C662A71F15B73D4500F4E48F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C662A72015B73D4500F4E48F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C662A72815B73D4500F4E48F /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C662A72915B73D4500F4E48F /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C662A72B15B73D4500F4E48F /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C662A72C15B73D4500F4E48F /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C662A74015B73D4500F4E48F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C662A74115B73D4500F4E48F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C662A74615B73D4500F4E48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C662A74715B73D4500F4E48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C662A74915B73D4500F4E48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColorBlind/ColorBlind-Prefix.pch";
+				INFOPLIST_FILE = "ColorBlind/ColorBlind-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C662A74A15B73D4500F4E48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColorBlind/ColorBlind-Prefix.pch";
+				INFOPLIST_FILE = "ColorBlind/ColorBlind-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C662A74C15B73D4500F4E48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ColorBlind.app/ColorBlind";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColorBlind/ColorBlind-Prefix.pch";
+				INFOPLIST_FILE = "ColorBlindTests/ColorBlindTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C662A74D15B73D4500F4E48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ColorBlind.app/ColorBlind";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColorBlind/ColorBlind-Prefix.pch";
+				INFOPLIST_FILE = "ColorBlindTests/ColorBlindTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C662A70C15B73D4400F4E48F /* Build configuration list for PBXProject "ColorBlind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C662A74615B73D4500F4E48F /* Debug */,
+				C662A74715B73D4500F4E48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C662A74815B73D4500F4E48F /* Build configuration list for PBXNativeTarget "ColorBlind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C662A74915B73D4500F4E48F /* Debug */,
+				C662A74A15B73D4500F4E48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C662A74B15B73D4500F4E48F /* Build configuration list for PBXNativeTarget "ColorBlindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C662A74C15B73D4500F4E48F /* Debug */,
+				C662A74D15B73D4500F4E48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C662A70915B73D4400F4E48F /* Project object */;
+}

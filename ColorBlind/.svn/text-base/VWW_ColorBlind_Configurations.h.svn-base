@@ -1,0 +1,22 @@
+//
+//  VWW_ColorBlind_Configurations.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/19/12.
+//
+//
+
+#ifndef ColorBlind_VWW_ColorBlind_Configurations_h
+#define ColorBlind_VWW_ColorBlind_Configurations_h
+
+// TODO: Explore the use of const NSString* vs #define
+
+#define USE_GCD 1                       // This will use Grand Centrl Dispath to communicate to the webserver and not block the main UI
+#define USE_NOTIFICATION_CENTER 1       // Use notification center to contact delegates
+
+//const NSString* kWebServerHTTPPostBody = @"app_id=com.vaporwarewolf.colorblind&get_news=1";
+#define WS_HTTP_POST_BODY "app_id=com.vaporwarewolf.colorblind&get_news=1"
+#define WS_SERVER_ADDRESS "http://zakkhoyt.kicks-ass.net/ColorBlind/index.php"
+#define NC_CURRENT_COLOR_CHANGED "com.vaporwarewolf.colorblind.currentcolor"
+#define NC_COLOR_LIST_CHANGED "com.vaporwarewolf.colorblind.colorlist"
+#endif

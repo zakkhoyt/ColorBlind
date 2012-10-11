@@ -1,0 +1,45 @@
+
+* in the VWW_Colors class, convert colors to NSMutableDictionary type. 
+
+* add NSUserDefaults system to store current color
+
+* add ability to load different color files
+    * add man/woman modes
+
+* splash screen
+    * iPhone
+
+* Tab bar icons
+    * iPad
+    * iPhone
+
+* restructure file reader to accept a string (in consideration of news server)
+
+* Move hasRetinaDisplay to an appropriate location
+
+* Complete table view
+    * replace the UIView tableview subclass with VWW_ColorPickerView class and delete original. 
+
+* Complete slider view
+
+* Complete color picker view
+    * make the picker view so that it doesn't have ot have the exact same size as UI (indexing)
+    * Insert the ability to use different source images
+        * create data struct to handle filenames, index, image...
+        * load file into image preview
+
+* Complete camera tab
+    * Add VWW_ColorPickerView popup. 
+    * render frames from AVF callback if can't simultaneously use preview
+    * sample framew from AVF callback
+    * switch cameras
+    * remove crosshairs (use subclassing maybe?)
+    * investigate a way to subclass the entire picker view for camera view use
+
+* Get categories working
+
+* Check for memory leaks (use profile to look for leaks, etc..)
+
+
+        
+        

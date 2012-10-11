@@ -1,0 +1,20 @@
+//
+//  VWW_ColorProtocol.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/18/12.
+//
+//
+
+#ifndef ColorBlind_VWW_ColorProtocol_h
+#define ColorBlind_VWW_ColorProtocol_h
+
+@protocol VWW_ColorDelegate <NSObject>
+
+
+//-(VWW_Color*)getClosestColorFromRed:(NSUInteger)red andGreen:(NSUInteger)green andBlue:(NSUInteger)blue;
+
+
+@end
+
+#endif

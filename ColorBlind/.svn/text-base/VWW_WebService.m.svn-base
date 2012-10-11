@@ -1,0 +1,123 @@
+//
+//  VWW_WebService.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/19/12.
+//
+//
+
+
+
+#import "VWW_WebService.h"
+
+@implementation VWW_WebService
+
+-(id)init{
+    self = [super init];
+    if(self){
+        _webServiceQueue = dispatch_queue_create("com.vaporwarewolf", NULL);
+    }
+    return self;
+}
+
+- (void)dealloc {
+    dispatch_release(_webServiceQueue);
+    [super dealloc];
+}
+
+
+#pragma mark Implements NSURLConnectionDelegate protocol
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSLog(@"%s", __FUNCTION__);
+    
+    // cast the response to NSHTTPURLResponse so we can look for 404 etc
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    NSInteger code = [httpResponse statusCode];
+    
+    // Since processing these results can take a while, use GCD so that we dont' block the  main UI
+    switch(code){
+        case 200:
+            break;
+        case 404:
+            NSLog(@"remote url returned error %d %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
+            break;
+        default:
+            NSLog(@"remote url returned error %d %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
+            break;
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)mdata {
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%@", [NSString stringWithFormat:@"%s",(char*)[mdata bytes]]);
+    
+    
+    NSString* dataString = [NSString stringWithFormat:@"%s",(char*)[mdata bytes]];
+    
+    // Since processing these results can take a while depending on file size, use GCD so that we dont' block the  main UI
+#if defined(USE_GCD)
+    dispatch_async(_webServiceQueue, ^{
+        [self processNews:dataString];
+    });
+#else
+    [self processNews:dataString];
+#endif
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"%s ERROR (%@)", __FUNCTION__, error.description);
+}
+
+
+
+#pragma mark Custom methods
+//-(void)getColors{
+//    [self sendHTTPPost:@"get_colors=1"];
+//}
+
+-(void)getNews{
+    [self sendHTTPPost:[NSString stringWithFormat:@"%s", WS_HTTP_POST_BODY]];
+}
+
+//-(void)processColors:(NSString*)colors{
+//    
+//}
+-(void)processNews:(NSString*)news{
+    
+}
+
+-(void)sendHTTPPost:(NSString*)body{
+
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%s", WS_SERVER_ADDRESS]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc]initWithURL:url];
+    
+    // Set request timeout
+    [request setTimeoutInterval:10.0];
+    
+    // Set http method to POST
+    [request setHTTPMethod:@"POST"];
+    
+    // Set http body
+    NSData *requestData = [NSData dataWithBytes:[body UTF8String]length:[body length]];
+    [request setHTTPBody:requestData];
+    
+    // Creat connection and test for results. This will kick off our callbacks from NSURLConnectionDelegate protocol
+    NSURLConnection* connection = [[NSURLConnection alloc]initWithRequest:request
+                                                                 delegate:self
+                                                         startImmediately:YES];
+    
+    if(!connection) {
+ 		NSLog(@"connection failed :(");
+ 	}
+    
+ 	[connection release];
+    [request release];
+}
+
+@end

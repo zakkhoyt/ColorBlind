@@ -1,0 +1,20 @@
+//
+//  VWW_AboutViewController.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/19/12.
+//
+//  
+
+#import <UIKit/UIKit.h>
+#import "VWW_Colors.h"
+#import "VWW_WebService.h"
+
+@interface VWW_AboutViewController : UIViewController
+
+@property (retain, nonatomic) IBOutlet UILabel *lblAbout;
+@property (retain, nonatomic) IBOutlet UIButton* butTest;
+
+
+
+@end

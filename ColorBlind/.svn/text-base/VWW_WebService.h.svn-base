@@ -1,0 +1,22 @@
+//
+//  VWW_WebService.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/19/12.
+//
+//
+
+#import <Foundation/Foundation.h>
+
+@interface VWW_WebService : NSObject <NSURLConnectionDelegate>{
+    dispatch_queue_t _webServiceQueue;
+}
+
+//-(void)getColors;
+-(void)getNews;
+
+//-(void)processColors:(NSString*)colors;
+-(void)processNews:(NSString*)news;
+
+-(void)sendHTTPPost:(NSString*)body;
+@end

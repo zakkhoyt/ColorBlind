@@ -1,0 +1,13 @@
+//
+//  VWW_ColorPickerView.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/19/12.
+//
+//
+
+#import <UIKit/UIKit.h>
+
+@interface VWW_ColorPickerView : UIView
+
+@end

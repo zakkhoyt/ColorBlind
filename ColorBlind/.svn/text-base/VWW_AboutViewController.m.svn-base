@@ -1,0 +1,71 @@
+//
+//  VWW_AboutViewController.m
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/19/12.
+//
+//
+
+#import "VWW_AboutViewController.h"
+
+
+@interface VWW_AboutViewController ()
+@property (nonatomic, retain) VWW_Colors* colors;
+-(IBAction)handle_butTest:(id)sender;
+@end
+
+
+@implementation VWW_AboutViewController
+@synthesize colors;
+@synthesize lblAbout;
+@synthesize butTest;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.lblAbout.text = @"This is the about label. Load from a strings file and add some screen images.";
+
+    
+    // TODO: insert logic here to try the webservice/timeout/data decision
+    // First try to get colors from the webservice.
+    // If fails, then read colors from local file and then share the data with the controller classes
+    VWW_WebService* webService = [[VWW_WebService alloc]init];
+    [webService getNews];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [lblAbout release];
+    [butTest release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setLblAbout:nil];
+    [super viewDidUnload];
+}
+
+#pragma mark Custom methods
+
+
+-(IBAction)handle_butTest:(id)sender{
+
+
+
+}
+
+
+@end

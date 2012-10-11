@@ -1,0 +1,13 @@
+//
+//  VWW_ColorViewContoller.h
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/23/12.
+//
+//
+
+#import <UIKit/UIKit.h>
+
+@interface VWW_ColorViewContoller : UIViewController
+
+@end
