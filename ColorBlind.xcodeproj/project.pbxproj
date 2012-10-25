@@ -44,12 +44,13 @@
 		C662A76C15B7894600F4E48F /* NSNumber+htmlValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A76B15B7894600F4E48F /* NSNumber+htmlValue.m */; };
 		C662A77215B78C5400F4E48F /* VWW_ColorTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A77115B78C5400F4E48F /* VWW_ColorTableCell.m */; };
 		C662A77515B791A900F4E48F /* VWW_ColorsSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */; };
+		C6B35AA81639FFC8001D7759 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B35AA71639FFC8001D7759 /* AVFoundation.framework */; };
+		C6B35AAC163A0027001D7759 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B35AA9163A0027001D7759 /* CoreMedia.framework */; };
+		C6B35AAD163A0027001D7759 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B35AAA163A0027001D7759 /* CoreVideo.framework */; };
+		C6B35AAE163A0027001D7759 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B35AAB163A0027001D7759 /* QuartzCore.framework */; };
 		C6BB4B0815C373A6001E372C /* VWW_ColorPickerImageViewCrosshairsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BB4B0715C373A6001E372C /* VWW_ColorPickerImageViewCrosshairsView.m */; };
 		C6BB4B1715C39502001E372C /* VWW_ColorsCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BB4B0F15C38B5C001E372C /* VWW_ColorsCameraViewController.m */; };
-		C6BB4B1E15C3984C001E372C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB4B1C15C3984C001E372C /* AVFoundation.framework */; };
-		C6BB4B1F15C3984C001E372C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB4B1D15C3984C001E372C /* QuartzCore.framework */; };
 		C6BB4B2215C39B69001E372C /* VWW_ColorsCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BB4B2115C39B69001E372C /* VWW_ColorsCameraPreviewView.m */; };
-		C6BB4B2615C3A499001E372C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB4B2515C3A499001E372C /* CoreMedia.framework */; };
 		C6BB4B2B15C4BAA7001E372C /* vww_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C6BB4B2A15C4BAA7001E372C /* vww_logo.png */; };
 		C6BB4B3415C4F398001E372C /* custom.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6BB4B3315C4F398001E372C /* custom.strings */; };
 		C6BB4B4815C50C6D001E372C /* gradient_00_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = C6BB4B3A15C50C6D001E372C /* gradient_00_iPad.png */; };
@@ -66,7 +67,7 @@
 		C6BB4B5315C50C6D001E372C /* gradient_05_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6BB4B4515C50C6D001E372C /* gradient_05_iPhone.png */; };
 		C6BB4B5415C50C6D001E372C /* gradient_06_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = C6BB4B4615C50C6D001E372C /* gradient_06_iPad.png */; };
 		C6BB4B5515C50C6D001E372C /* gradient_06_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6BB4B4715C50C6D001E372C /* gradient_06_iPhone.png */; };
-		C6BB4B5915C51253001E372C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB4B5815C51253001E372C /* CoreVideo.framework */; };
+		C6D3E1BA1639FB480032D2F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1B91639FB480032D2F3 /* Default-568h@2x.png */; };
 		C6D98D1615C23AC7002A85F0 /* VWW_Colors_unittest.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D98D1515C23AC7002A85F0 /* VWW_Colors_unittest.m */; };
 		C6D98D1815C23CE7002A85F0 /* ColorBlindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D98D1715C23CE7002A85F0 /* ColorBlindTests.m */; };
 		C6E45D4D15BE6D3A00626750 /* VWW_ColorViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E45D4C15BE6D3A00626750 /* VWW_ColorViewContoller.m */; };
@@ -146,15 +147,16 @@
 		C662A77115B78C5400F4E48F /* VWW_ColorTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorTableCell.m; sourceTree = "<group>"; };
 		C662A77315B791A900F4E48F /* VWW_ColorsSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsSliderViewController.h; sourceTree = "<group>"; };
 		C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsSliderViewController.m; sourceTree = "<group>"; };
+		C6B35AA71639FFC8001D7759 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C6B35AA9163A0027001D7759 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C6B35AAA163A0027001D7759 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		C6B35AAB163A0027001D7759 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C6BB4B0615C373A5001E372C /* VWW_ColorPickerImageViewCrosshairsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorPickerImageViewCrosshairsView.h; sourceTree = "<group>"; };
 		C6BB4B0715C373A6001E372C /* VWW_ColorPickerImageViewCrosshairsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorPickerImageViewCrosshairsView.m; sourceTree = "<group>"; };
 		C6BB4B0E15C38B5C001E372C /* VWW_ColorsCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsCameraViewController.h; sourceTree = "<group>"; };
 		C6BB4B0F15C38B5C001E372C /* VWW_ColorsCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsCameraViewController.m; sourceTree = "<group>"; };
-		C6BB4B1C15C3984C001E372C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
-		C6BB4B1D15C3984C001E372C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
 		C6BB4B2015C39B69001E372C /* VWW_ColorsCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorsCameraPreviewView.h; sourceTree = "<group>"; };
 		C6BB4B2115C39B69001E372C /* VWW_ColorsCameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorsCameraPreviewView.m; sourceTree = "<group>"; };
-		C6BB4B2515C3A499001E372C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = "<group>"; };
 		C6BB4B2A15C4BAA7001E372C /* vww_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vww_logo.png; path = images/vww_logo.png; sourceTree = "<group>"; };
 		C6BB4B3315C4F398001E372C /* custom.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = custom.strings; sourceTree = "<group>"; };
 		C6BB4B3A15C50C6D001E372C /* gradient_00_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_00_iPad.png; sourceTree = "<group>"; };
@@ -171,7 +173,7 @@
 		C6BB4B4515C50C6D001E372C /* gradient_05_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_05_iPhone.png; sourceTree = "<group>"; };
 		C6BB4B4615C50C6D001E372C /* gradient_06_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_06_iPad.png; sourceTree = "<group>"; };
 		C6BB4B4715C50C6D001E372C /* gradient_06_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient_06_iPhone.png; sourceTree = "<group>"; };
-		C6BB4B5815C51253001E372C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = "<group>"; };
+		C6D3E1B91639FB480032D2F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C6D98D1415C23AC7002A85F0 /* VWW_Colors_unittest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_Colors_unittest.h; sourceTree = "<group>"; };
 		C6D98D1515C23AC7002A85F0 /* VWW_Colors_unittest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_Colors_unittest.m; sourceTree = "<group>"; };
 		C6D98D1715C23CE7002A85F0 /* ColorBlindTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorBlindTests.m; sourceTree = "<group>"; };
@@ -193,13 +195,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B35AAC163A0027001D7759 /* CoreMedia.framework in Frameworks */,
+				C6B35AAD163A0027001D7759 /* CoreVideo.framework in Frameworks */,
+				C6B35AAE163A0027001D7759 /* QuartzCore.framework in Frameworks */,
+				C6B35AA81639FFC8001D7759 /* AVFoundation.framework in Frameworks */,
 				C662A71715B73D4500F4E48F /* UIKit.framework in Frameworks */,
 				C662A71915B73D4500F4E48F /* Foundation.framework in Frameworks */,
 				C662A71B15B73D4500F4E48F /* CoreGraphics.framework in Frameworks */,
-				C6BB4B1E15C3984C001E372C /* AVFoundation.framework in Frameworks */,
-				C6BB4B1F15C3984C001E372C /* QuartzCore.framework in Frameworks */,
-				C6BB4B2615C3A499001E372C /* CoreMedia.framework in Frameworks */,
-				C6BB4B5915C51253001E372C /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +271,7 @@
 		C662A70715B73D4400F4E48F = {
 			isa = PBXGroup;
 			children = (
+				C6D3E1B91639FB480032D2F3 /* Default-568h@2x.png */,
 				C6F3338C15B8C22B00477797 /* README.txt */,
 				C6F3338415B7D37400477797 /* images */,
 				C662A71C15B73D4500F4E48F /* ColorBlind */,
@@ -290,10 +293,10 @@
 		C662A71515B73D4500F4E48F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6BB4B5815C51253001E372C /* CoreVideo.framework */,
-				C6BB4B2515C3A499001E372C /* CoreMedia.framework */,
-				C6BB4B1C15C3984C001E372C /* AVFoundation.framework */,
-				C6BB4B1D15C3984C001E372C /* QuartzCore.framework */,
+				C6B35AA9163A0027001D7759 /* CoreMedia.framework */,
+				C6B35AAA163A0027001D7759 /* CoreVideo.framework */,
+				C6B35AAB163A0027001D7759 /* QuartzCore.framework */,
+				C6B35AA71639FFC8001D7759 /* AVFoundation.framework */,
 				C662A71615B73D4500F4E48F /* UIKit.framework */,
 				C662A71815B73D4500F4E48F /* Foundation.framework */,
 				C662A71A15B73D4500F4E48F /* CoreGraphics.framework */,
@@ -517,7 +520,7 @@
 		C662A70915B73D4400F4E48F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = C662A70C15B73D4400F4E48F /* Build configuration list for PBXProject "ColorBlind" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -576,6 +579,7 @@
 				C6BB4B5415C50C6D001E372C /* gradient_06_iPad.png in Resources */,
 				C6BB4B5515C50C6D001E372C /* gradient_06_iPhone.png in Resources */,
 				C6FCF7C715CA3703005D135C /* data.plist in Resources */,
+				C6D3E1BA1639FB480032D2F3 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +699,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -710,6 +715,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "827C7374-B6CB-4D88-9B13-00C986FC1B25";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "827C7374-B6CB-4D88-9B13-00C986FC1B25";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -720,7 +727,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -729,6 +737,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "827C7374-B6CB-4D88-9B13-00C986FC1B25";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "827C7374-B6CB-4D88-9B13-00C986FC1B25";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -740,10 +750,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorBlind/ColorBlind-Prefix.pch";
 				INFOPLIST_FILE = "ColorBlind/ColorBlind-Info.plist";
@@ -762,10 +769,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorBlind/ColorBlind-Prefix.pch";
 				INFOPLIST_FILE = "ColorBlind/ColorBlind-Info.plist";
