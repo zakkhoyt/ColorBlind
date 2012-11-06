@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+
+@class VWW_WebService;
+
 @protocol VWW_WebServiceNewsDelegate <NSObject>
--(void)recievedNews:(NSString*)news;
+-(void)vww_WebService:(VWW_WebService*)sender recievedNews:(NSString*)news;
 @end
 
 @protocol VWW_WebServiceColorsDelegate <NSObject>
--(void)recievedColors:(NSString*)colors;
+-(void)vww_WebService:(VWW_WebService*)sender recievedColors:(NSString*)colors;
 @end
 
 

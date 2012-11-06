@@ -6,6 +6,8 @@
 //
 
 #import "VWW_ColorsTableViewController.h"
+#import "VWW_ColorTableCellColorView.h"
+#import "VWW_ColorViewContoller.h"
 #import "NSNumber+htmlValue.h"
 #import "VWW_ColorTableCell.h"
 #import "VWW_ColorViewContoller.h"
@@ -18,7 +20,9 @@ static const NSUInteger kGreenTag = 103;
 static const NSUInteger kBlueTag = 104;
 static const NSUInteger kHueTag = 105;
 
-@interface VWW_ColorsTableViewController ()
+@interface VWW_ColorsTableViewController ()     <VWW_ColorsDelegate,
+    VWW_ColorTableCellColorViewDelegate,
+    VWW_ColorViewControllerDelegate>
 @property (nonatomic, retain) NSMutableArray* data;
 -(void)createDataSource;
 -(void)loadLocalizedStrings;
@@ -207,21 +211,30 @@ static const NSUInteger kHueTag = 105;
     return array;
 }
 
-#pragma mark Implements VWW_ColorTableCellDelegate
-// This is callback from our color view within a table cell.
-// Open the color for full screen display
--(void)userSelectedColor:(UIColor*)color{
+//#pragma mark Implements VWW_ColorTableCellDelegate
+//// This is callback from our color view within a table cell.
+//// Open the color for full screen display
+//
+//-(void)userSelectedColor:(UIColor*)color{
+//    if(![self.colors setCurrentColorFromUIColor:color]){
+//        NSLog(@"%s:%d ERROR! Failed to set current color from UIColor", __FUNCTION__, __LINE__);
+//    }
+//    
+//    [self performSegueWithIdentifier:@"segue_VWW_ColorViewController" sender:self];
+//}
+
+#pragma mark Implements VWW_ColorTableCellColorViewDelegate
+-(void)vww_ColorTableCellColorView:(VWW_ColorTableCellColorView*)sender userSelectedColor:(UIColor*)color{
     if(![self.colors setCurrentColorFromUIColor:color]){
         NSLog(@"%s:%d ERROR! Failed to set current color from UIColor", __FUNCTION__, __LINE__);
     }
-    
+
     [self performSegueWithIdentifier:@"segue_VWW_ColorViewController" sender:self];
 }
 
-
 #pragma mark Implements  VWW_ColorViewControllerDelegate
--(void)userIsDone{
-    [self dismissViewControllerAnimated:YES completion:nil];   
+-(void)vww_ColorViewContollerUerIsDone:(VWW_ColorViewContoller*)sender{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark Custom methods

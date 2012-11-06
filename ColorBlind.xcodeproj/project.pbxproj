@@ -104,7 +104,7 @@
 		C61FA62315B9310C0042E728 /* VWW_ColorBlind_Configurations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorBlind_Configurations.h; sourceTree = "<group>"; };
 		C61FA62615B9310C0042E728 /* VWW_WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_WebService.h; sourceTree = "<group>"; };
 		C61FA62715B9310C0042E728 /* VWW_WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_WebService.m; sourceTree = "<group>"; };
-		C6295FB215B7AFA3009B2306 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		C6295FB215B7AFA3009B2306 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = todo.txt; path = ../ColorBlind/todo.txt; sourceTree = "<group>"; };
 		C6295FBE15B7B337009B2306 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C6295FC015B7B346009B2306 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C6295FC215B7B3BE009B2306 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		C6E45D5115BE786E00626750 /* colors_w.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors_w.csv; sourceTree = "<group>"; };
 		C6F3338615B8BFD600477797 /* VWW_ColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorPickerView.h; sourceTree = "<group>"; };
 		C6F3338715B8BFD600477797 /* VWW_ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorPickerView.m; sourceTree = "<group>"; };
-		C6F3338C15B8C22B00477797 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		C6F3338C15B8C22B00477797 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		C6F7536415C616A400911E59 /* VWW_ColorTableCellColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ColorTableCellColorView.h; sourceTree = "<group>"; };
 		C6F7536515C616A400911E59 /* VWW_ColorTableCellColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ColorTableCellColorView.m; sourceTree = "<group>"; };
 		C6FCF7C615CA3703005D135C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
@@ -218,61 +218,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C61007C615B7A55900DA6D8E /* todo */ = {
-			isa = PBXGroup;
-			children = (
-				C6295FB215B7AFA3009B2306 /* todo.txt */,
-				C662A76A15B7894600F4E48F /* NSNumber+htmlValue.h */,
-				C662A76B15B7894600F4E48F /* NSNumber+htmlValue.m */,
-			);
-			name = todo;
-			sourceTree = "<group>";
-		};
-		C61FA62C15B931210042E728 /* VWW_AboutViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C61FA62115B9310C0042E728 /* VWW_AboutViewController.h */,
-				C61FA62215B9310C0042E728 /* VWW_AboutViewController.m */,
-			);
-			name = VWW_AboutViewController;
-			sourceTree = "<group>";
-		};
-		C61FA62D15B9318B0042E728 /* VWW_ColorFullScreenPreview */ = {
-			isa = PBXGroup;
-			children = (
-				C6E45D4B15BE6D3A00626750 /* VWW_ColorViewContoller.h */,
-				C6E45D4C15BE6D3A00626750 /* VWW_ColorViewContoller.m */,
-				C61007C715B7A5EE00DA6D8E /* VWW_ColorView.h */,
-				C61007C815B7A5EE00DA6D8E /* VWW_ColorView.m */,
-			);
-			name = VWW_ColorFullScreenPreview;
-			sourceTree = "<group>";
-		};
 		C61FA62F15B931C20042E728 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C662A72B15B73D4500F4E48F /* MainStoryboard_iPad.storyboard */,
 				C662A72815B73D4500F4E48F /* MainStoryboard_iPhone.storyboard */,
+				C662A72B15B73D4500F4E48F /* MainStoryboard_iPad.storyboard */,
 			);
 			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		C65DA6CC15C52BCA0041D143 /* VWW_GradientImageTableView */ = {
-			isa = PBXGroup;
-			children = (
-				C65DA6C915C52B530041D143 /* VWW_GradientImageTableViewController.h */,
-				C65DA6CA15C52B530041D143 /* VWW_GradientImageTableViewController.m */,
-				C65DA6CD15C52C010041D143 /* VWW_GradientImageTableCell.h */,
-				C65DA6CE15C52C010041D143 /* VWW_GradientImageTableCell.m */,
-			);
-			name = VWW_GradientImageTableView;
 			sourceTree = "<group>";
 		};
 		C662A70715B73D4400F4E48F = {
 			isa = PBXGroup;
 			children = (
 				C6D3E1B91639FB480032D2F3 /* Default-568h@2x.png */,
-				C6F3338C15B8C22B00477797 /* README.txt */,
 				C6F3338415B7D37400477797 /* images */,
 				C662A71C15B73D4500F4E48F /* ColorBlind */,
 				C662A73D15B73D4500F4E48F /* ColorBlindTests */,
@@ -308,27 +266,12 @@
 		C662A71C15B73D4500F4E48F /* ColorBlind */ = {
 			isa = PBXGroup;
 			children = (
-				C61007C615B7A55900DA6D8E /* todo */,
 				C662A75215B73DB100F4E48F /* docs */,
-				C61FA62315B9310C0042E728 /* VWW_ColorBlind_Configurations.h */,
-				C662A72515B73D4500F4E48F /* VWW_AppDelegate.h */,
-				C662A72615B73D4500F4E48F /* VWW_AppDelegate.m */,
-				C662A75B15B741F500F4E48F /* VWW_Color.h */,
-				C662A75C15B741F500F4E48F /* VWW_Color.m */,
-				C61007C515B7A4CC00DA6D8E /* VWW_ColorsProtocol.h */,
-				C65991E615BE4BEE0025C610 /* VWW_Colors.h */,
-				C65991E715BE4BEE0025C610 /* VWW_Colors.m */,
-				C662A76015B744A900F4E48F /* VWW_FileReader.h */,
-				C662A76115B744A900F4E48F /* VWW_FileReader.m */,
-				C61FA62615B9310C0042E728 /* VWW_WebService.h */,
-				C61FA62715B9310C0042E728 /* VWW_WebService.m */,
-				C61FA62C15B931210042E728 /* VWW_AboutViewController */,
-				C6F3338915B8C01D00477797 /* VWW_ColorsTableView */,
-				C6F3338A15B8C03E00477797 /* VWW_ColorsSliderView */,
-				C6F3338B15B8C05200477797 /* VWW_ColorsPickerView */,
-				C6F3339115B8C79300477797 /* VWW_ColorsCameraView */,
-				C61FA62D15B9318B0042E728 /* VWW_ColorFullScreenPreview */,
 				C61FA62F15B931C20042E728 /* Storyboards */,
+				C6A20EC41649C0300079A80D /* utilities */,
+				C6A20EC31649C0010079A80D /* models */,
+				C6A20EC21649BFF70079A80D /* views */,
+				C6A20EC01649BFEC0079A80D /* controllers */,
 				C662A71D15B73D4500F4E48F /* Supporting Files */,
 			);
 			path = ColorBlind;
@@ -337,6 +280,9 @@
 		C662A71D15B73D4500F4E48F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C61FA62315B9310C0042E728 /* VWW_ColorBlind_Configurations.h */,
+				C662A72515B73D4500F4E48F /* VWW_AppDelegate.h */,
+				C662A72615B73D4500F4E48F /* VWW_AppDelegate.m */,
 				C662A71E15B73D4500F4E48F /* ColorBlind-Info.plist */,
 				C662A71F15B73D4500F4E48F /* InfoPlist.strings */,
 				C662A72215B73D4500F4E48F /* main.m */,
@@ -369,6 +315,8 @@
 		C662A75215B73DB100F4E48F /* docs */ = {
 			isa = PBXGroup;
 			children = (
+				C6F3338C15B8C22B00477797 /* README.txt */,
+				C6295FB215B7AFA3009B2306 /* todo.txt */,
 				C6E45D5015BE786E00626750 /* colors_m.csv */,
 				C6E45D5115BE786E00626750 /* colors_w.csv */,
 				C6BB4B3315C4F398001E372C /* custom.strings */,
@@ -377,15 +325,81 @@
 			path = docs;
 			sourceTree = SOURCE_ROOT;
 		};
-		C6B13C4915C5E3710078BBEE /* cell */ = {
+		C6A20EC01649BFEC0079A80D /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C61FA62115B9310C0042E728 /* VWW_AboutViewController.h */,
+				C61FA62215B9310C0042E728 /* VWW_AboutViewController.m */,
+				C6BB4B0E15C38B5C001E372C /* VWW_ColorsCameraViewController.h */,
+				C6BB4B0F15C38B5C001E372C /* VWW_ColorsCameraViewController.m */,
+				C662A76315B754B900F4E48F /* VWW_ColorsTableViewController.h */,
+				C662A76415B754B900F4E48F /* VWW_ColorsTableViewController.m */,
+				C61007C215B7A33F00DA6D8E /* VWW_ColorsPickerViewController.h */,
+				C61007C315B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m */,
+				C662A77315B791A900F4E48F /* VWW_ColorsSliderViewController.h */,
+				C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */,
+				C6E45D4B15BE6D3A00626750 /* VWW_ColorViewContoller.h */,
+				C6E45D4C15BE6D3A00626750 /* VWW_ColorViewContoller.m */,
+				C65DA6C915C52B530041D143 /* VWW_GradientImageTableViewController.h */,
+				C65DA6CA15C52B530041D143 /* VWW_GradientImageTableViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		C6A20EC21649BFF70079A80D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C6A20EC51649C0500079A80D /* cells */,
+				C6F7536415C616A400911E59 /* VWW_ColorTableCellColorView.h */,
+				C6F7536515C616A400911E59 /* VWW_ColorTableCellColorView.m */,
+				C6F3338615B8BFD600477797 /* VWW_ColorPickerView.h */,
+				C6F3338715B8BFD600477797 /* VWW_ColorPickerView.m */,
+				C6153E3215B9518F008C6B72 /* VWW_ColorPickerImageView.h */,
+				C6153E3315B9518F008C6B72 /* VWW_ColorPickerImageView.m */,
+				C6BB4B0615C373A5001E372C /* VWW_ColorPickerImageViewCrosshairsView.h */,
+				C6BB4B0715C373A6001E372C /* VWW_ColorPickerImageViewCrosshairsView.m */,
+				C6BB4B2015C39B69001E372C /* VWW_ColorsCameraPreviewView.h */,
+				C6BB4B2115C39B69001E372C /* VWW_ColorsCameraPreviewView.m */,
+				C61007C715B7A5EE00DA6D8E /* VWW_ColorView.h */,
+				C61007C815B7A5EE00DA6D8E /* VWW_ColorView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		C6A20EC31649C0010079A80D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				C662A75B15B741F500F4E48F /* VWW_Color.h */,
+				C662A75C15B741F500F4E48F /* VWW_Color.m */,
+				C65991E615BE4BEE0025C610 /* VWW_Colors.h */,
+				C65991E715BE4BEE0025C610 /* VWW_Colors.m */,
+				C662A76015B744A900F4E48F /* VWW_FileReader.h */,
+				C662A76115B744A900F4E48F /* VWW_FileReader.m */,
+				C61FA62615B9310C0042E728 /* VWW_WebService.h */,
+				C61FA62715B9310C0042E728 /* VWW_WebService.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		C6A20EC41649C0300079A80D /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C61007C515B7A4CC00DA6D8E /* VWW_ColorsProtocol.h */,
+				C662A76A15B7894600F4E48F /* NSNumber+htmlValue.h */,
+				C662A76B15B7894600F4E48F /* NSNumber+htmlValue.m */,
+			);
+			name = utilities;
+			sourceTree = "<group>";
+		};
+		C6A20EC51649C0500079A80D /* cells */ = {
 			isa = PBXGroup;
 			children = (
 				C662A77015B78C5300F4E48F /* VWW_ColorTableCell.h */,
 				C662A77115B78C5400F4E48F /* VWW_ColorTableCell.m */,
-				C6F7536415C616A400911E59 /* VWW_ColorTableCellColorView.h */,
-				C6F7536515C616A400911E59 /* VWW_ColorTableCellColorView.m */,
+				C65DA6CD15C52C010041D143 /* VWW_GradientImageTableCell.h */,
+				C65DA6CE15C52C010041D143 /* VWW_GradientImageTableCell.m */,
 			);
-			name = cell;
+			name = cells;
 			sourceTree = "<group>";
 		};
 		C6BB4B3915C50C6D001E372C /* gradients */ = {
@@ -427,52 +441,6 @@
 				C6295FBE15B7B337009B2306 /* Icon@2x.png */,
 			);
 			name = images;
-			sourceTree = "<group>";
-		};
-		C6F3338915B8C01D00477797 /* VWW_ColorsTableView */ = {
-			isa = PBXGroup;
-			children = (
-				C662A76315B754B900F4E48F /* VWW_ColorsTableViewController.h */,
-				C662A76415B754B900F4E48F /* VWW_ColorsTableViewController.m */,
-				C6B13C4915C5E3710078BBEE /* cell */,
-			);
-			name = VWW_ColorsTableView;
-			sourceTree = "<group>";
-		};
-		C6F3338A15B8C03E00477797 /* VWW_ColorsSliderView */ = {
-			isa = PBXGroup;
-			children = (
-				C662A77315B791A900F4E48F /* VWW_ColorsSliderViewController.h */,
-				C662A77415B791A900F4E48F /* VWW_ColorsSliderViewController.m */,
-			);
-			name = VWW_ColorsSliderView;
-			sourceTree = "<group>";
-		};
-		C6F3338B15B8C05200477797 /* VWW_ColorsPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				C61007C215B7A33F00DA6D8E /* VWW_ColorsPickerViewController.h */,
-				C61007C315B7A33F00DA6D8E /* VWW_ColorsPickerViewController.m */,
-				C6F3338615B8BFD600477797 /* VWW_ColorPickerView.h */,
-				C6F3338715B8BFD600477797 /* VWW_ColorPickerView.m */,
-				C6153E3215B9518F008C6B72 /* VWW_ColorPickerImageView.h */,
-				C6153E3315B9518F008C6B72 /* VWW_ColorPickerImageView.m */,
-				C6BB4B0615C373A5001E372C /* VWW_ColorPickerImageViewCrosshairsView.h */,
-				C6BB4B0715C373A6001E372C /* VWW_ColorPickerImageViewCrosshairsView.m */,
-				C65DA6CC15C52BCA0041D143 /* VWW_GradientImageTableView */,
-			);
-			name = VWW_ColorsPickerView;
-			sourceTree = "<group>";
-		};
-		C6F3339115B8C79300477797 /* VWW_ColorsCameraView */ = {
-			isa = PBXGroup;
-			children = (
-				C6BB4B0E15C38B5C001E372C /* VWW_ColorsCameraViewController.h */,
-				C6BB4B0F15C38B5C001E372C /* VWW_ColorsCameraViewController.m */,
-				C6BB4B2015C39B69001E372C /* VWW_ColorsCameraPreviewView.h */,
-				C6BB4B2115C39B69001E372C /* VWW_ColorsCameraPreviewView.m */,
-			);
-			name = VWW_ColorsCameraView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

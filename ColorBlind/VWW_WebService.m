@@ -186,7 +186,7 @@
         // Since this is being processed on a secondary queue and we are trying to update the UI
         // we need to send this block to the main queue
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.colorsDelegate recievedColors:colors];
+            [self.colorsDelegate vww_WebService:self recievedColors:colors];
         });
     }
 }
@@ -201,7 +201,7 @@
         // Since this is being processed on a secondary queue and we are trying to update the UI
         // we need to send this block to the main queue
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.newsDelegate recievedNews:news];
+            [self.newsDelegate vww_WebService:self recievedNews:news];
         });
     }
 }

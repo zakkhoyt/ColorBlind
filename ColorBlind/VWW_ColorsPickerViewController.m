@@ -9,10 +9,19 @@
 #import "VWW_ColorsPickerViewController.h"
 #import "VWW_ColorPickerView.h"
 #import "VWW_ColorPickerImageViewCrosshairsView.h"
+#import "VWW_ColorPickerImageView.h"
+#import "VWW_GradientImageTableViewController.h"
+#import "VWW_ColorViewContoller.h"
+#import "VWW_ColorPickerView.h"
 
 
 
-@interface VWW_ColorsPickerViewController ()
+@interface VWW_ColorsPickerViewController ()    <VWW_ColorsDelegate,
+    VWW_ColorPickerImageViewDelegate,
+    VWW_GradientImageTableViewDelegate,
+    VWW_ColorViewControllerDelegate,
+    VWW_ColorPickerViewDelegate>
+
 @property (nonatomic, retain) IBOutlet VWW_ColorPickerImageView* colorPickerImageView;
 @property (retain, nonatomic) IBOutlet UILabel *lblColorName;
 @property (retain, nonatomic) IBOutlet UILabel *lblColorDetails;
@@ -134,32 +143,30 @@
 }
 
 
-#pragma mark - Implements VWW_ColorPickerImageViewDelegate
-
--(void)userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color{
+#pragma mark - Implements VWW_ColorPickerImageViewDelegate <NSObject>
+-(void)vww_ColorPickerImageView:(VWW_ColorPickerImageView*)sender userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color{
     // Tell the crosshair view where to draw
     if(self.crosshairsView){
         [self.crosshairsView setSelectedPixel:pixel];
-//        [self.crosshairsView setNeedsDisplay];
     }
-
+    
     if(color){
         self.lblColorName.text = color.name;
         self.lblColorDetails.text = color.description;
         self.currentColorView.backgroundColor = color.color;
     }
-    
 }
-
--(void)userDoubleTapped{
+-(void)vww_ColorPickerImageViewUserDoubleTapped:(VWW_ColorPickerImageView*)sender{
     // Our user double tapped the color gradient picture. Let's perform our segue to show a table of more gradient files.
     [self performSegueWithIdentifier:@"segue_VWW_GradientImageTableViewController" sender:self];
 }
 
+
+
 #pragma mark - Implements VWW_ColorPickerViewDelegate
 // This is callback from our color view within a table cell.
 // Open the color for full screen display
--(void)userSelectedColor:(UIColor*)color{
+-(void)vww_ColorPickerView:(VWW_ColorPickerView*)sender userSelectedColor:(UIColor*)color{
     if(![self.colors setCurrentColorFromUIColor:color]){
         NSLog(@"%s:%d ERROR! Failed to set current color from UIColor", __FUNCTION__, __LINE__);
     }
@@ -169,13 +176,14 @@
 
 
 #pragma mark - Implements VWW_ColorViewControllerDelegate
--(void)userIsDone{
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(void)vww_ColorViewContollerUerIsDone:(VWW_ColorViewContoller*)sender{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 #pragma mark - Implements VWW_GradientImageTableViewDelegate
--(void)userSelectedNewImage:(UIImage*)image{
+-(void)vww_GradientImageTableViewController:(VWW_GradientImageTableViewController*)sender
+                       userSelectedNewImage:(UIImage*)image{
     
 }
 

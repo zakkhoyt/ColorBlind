@@ -58,7 +58,7 @@
 
 - (IBAction)handle_btnDone:(id)sender {
     if(self.delegate){
-        [self.delegate userIsDone];
+        [self.delegate vww_ColorViewContollerUerIsDone:self];
     }
 }
 

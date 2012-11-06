@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ColorBlind/VWW_ColorsCameraViewController.m"
-         timestampString = "365560483.145546"
+         timestampString = "373933747.450966"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "149"
-         endingLineNumber = "149"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
          landmarkName = "-captureOutput:didOutputSampleBuffer:fromConnection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ColorBlind/VWW_ColorsTableViewController.m"
-         timestampString = "365292498.427243"
+         timestampString = "373933747.450966"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,37 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ColorBlind/VWW_ColorsTableViewController.m"
-         timestampString = "365296924.652089"
+         timestampString = "373933747.450966"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "214"
-         endingLineNumber = "214"
-         landmarkName = "-userSelectedColor:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ColorBlind/VWW_ColorsTableViewController.m"
-         timestampString = "365296924.652089"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "215"
-         endingLineNumber = "215"
-         landmarkName = "-userSelectedColor:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ColorBlind/VWW_ColorsTableViewController.m"
-         timestampString = "365296452.043821"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
+         startingLineNumber = "109"
+         endingLineNumber = "109"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>

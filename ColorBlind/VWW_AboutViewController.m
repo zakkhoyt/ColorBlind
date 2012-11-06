@@ -8,8 +8,9 @@
 
 #import "VWW_AboutViewController.h"
 #import "VWW_FileReader.h"
+#import "VWW_WebService.h"
 
-@interface VWW_AboutViewController ()
+@interface VWW_AboutViewController ()  <VWW_WebServiceNewsDelegate>
 @property (retain, nonatomic) IBOutlet UITextView *lblAbout;
 @property (retain, nonatomic) IBOutlet UITextView *lblAppTitle;
 @property (retain, nonatomic) IBOutlet UITextView *lblNews;
@@ -81,8 +82,7 @@
 }
 
 #pragma mark Implements VWW_WebServiceNewsDelegate
-
--(void)recievedNews:(NSString*)news{
+-(void)vww_WebService:(VWW_WebService*)sender recievedNews:(NSString*)news{
     self.lblNews.text = news;
 }
 

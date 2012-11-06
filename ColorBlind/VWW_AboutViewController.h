@@ -7,10 +7,9 @@
 //  
 
 #import <UIKit/UIKit.h>
-#import "VWW_WebService.h"
 #import "VWW_Colors.h"
 
 
-@interface VWW_AboutViewController : UIViewController <VWW_WebServiceNewsDelegate>
+@interface VWW_AboutViewController : UIViewController
 @property (nonatomic, retain) VWW_Colors* colors;
 @end

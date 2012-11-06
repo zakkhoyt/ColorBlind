@@ -8,6 +8,12 @@
 
 #import "VWW_GradientImageTableCell.h"
 
+
+@interface VWW_GradientImageTableCell ()
+
+
+@end
+
 @implementation VWW_GradientImageTableCell
 @synthesize lblFileName;
 @synthesize imagePreview;

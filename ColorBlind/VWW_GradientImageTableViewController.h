@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class VWW_GradientImageTableViewController;
+
 @protocol VWW_GradientImageTableViewDelegate <NSObject>
--(void)userSelectedNewImage:(UIImage*)image;
+-(void)vww_GradientImageTableViewController:(VWW_GradientImageTableViewController*)sender
+                       userSelectedNewImage:(UIImage*)image;
 @end
 
 @interface VWW_GradientImageTableViewController : UITableViewController

@@ -49,7 +49,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if(self.delegate){
-        [self.delegate userSelectedColor:self.backgroundColor];
+        [self.delegate vww_ColorPickerView:self userSelectedColor:self.backgroundColor];
     }
 }
 

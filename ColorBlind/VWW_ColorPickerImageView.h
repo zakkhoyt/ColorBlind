@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "VWW_Colors.h"
 
+@class VWW_ColorPickerImageView;
+
 @protocol VWW_ColorPickerImageViewDelegate <NSObject>
--(void)userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color;
--(void)userDoubleTapped;
+-(void)vww_ColorPickerImageView:(VWW_ColorPickerImageView*)sender userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color;
+-(void)vww_ColorPickerImageViewUserDoubleTapped:(VWW_ColorPickerImageView*)sender;
 @end
 
 @interface VWW_ColorPickerImageView : UIImageView

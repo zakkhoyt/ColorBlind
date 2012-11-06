@@ -152,7 +152,7 @@
     VWW_Color* color = self.colors.currentColor;
     // Tell our delegate of the color at pixel
     if(self.delegate){
-        [self.delegate userSelectedPixel:point withColor:color];
+        [self.delegate vww_ColorsCameraPreviewView:self userSelectedPixel:point withColor:color];
     }
 
 

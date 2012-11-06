@@ -8,17 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-
+@class VWW_ColorPickerView;
 
 @protocol VWW_ColorPickerViewDelegate <NSObject>
--(void)userSelectedColor:(UIColor*)color;
+-(void)vww_ColorPickerView:(VWW_ColorPickerView*)sender userSelectedColor:(UIColor*)color;
 @end
-
-
-
-
-
-
 
 
 @interface VWW_ColorPickerView : UIView

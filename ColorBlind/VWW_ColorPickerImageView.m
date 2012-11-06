@@ -35,7 +35,7 @@
     UITouch *touch = [touches anyObject];
     if(touch.tapCount == 2){
         if(self.delegate){
-            [self.delegate userDoubleTapped];
+            [self.delegate vww_ColorPickerImageViewUserDoubleTapped:self];
         }
     }
     else if(touch.tapCount == 1){
@@ -118,7 +118,7 @@
                                                                           Blue:[NSNumber numberWithInteger:(NSUInteger)blue*(100/255.0)]];
     // Tell our delegate of the color at pixel
     if(self.delegate){
-        [self.delegate userSelectedPixel:point withColor:color];
+        [self.delegate vww_ColorPickerImageView:self userSelectedPixel:point withColor:color];
     }
     
     CFRelease(pixelData);

@@ -6,8 +6,14 @@
 //
 
 #import "VWW_ColorsSliderViewController.h"
+#import "VWW_ColorPickerView.h"
+#import "VWW_ColorViewContoller.h"
 
-@interface VWW_ColorsSliderViewController ()
+
+@interface VWW_ColorsSliderViewController ()    <VWW_ColorsDelegate,
+    VWW_ColorPickerViewDelegate,
+    VWW_ColorViewControllerDelegate>
+
 @property (retain, nonatomic) IBOutlet UISlider*    sliderRed;
 @property (retain, nonatomic) IBOutlet UISlider*    sliderGreen;
 @property (retain, nonatomic) IBOutlet UISlider*    sliderBlue;
@@ -88,7 +94,7 @@
 #pragma mark - Implements VWW_ColorPickerViewDelegate
 // This is callback from our color view within a table cell.
 // Open the color for full screen display
--(void)userSelectedColor:(UIColor*)color{
+-(void)vww_ColorPickerView:(VWW_ColorPickerView*)sender userSelectedColor:(UIColor*)color{
     if(![self.colors setCurrentColorFromUIColor:color]){
         NSLog(@"%s:%d ERROR! Failed to set current color from UIColor", __FUNCTION__, __LINE__);
     }
@@ -97,8 +103,8 @@
 }
 
 #pragma mark - Implements VWW_ColorViewControllerDelegate
--(void)userIsDone{
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(void)vww_ColorViewContollerUerIsDone:(VWW_ColorViewContoller*)sender{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - View lifecycle

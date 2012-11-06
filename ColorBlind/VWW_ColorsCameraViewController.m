@@ -6,12 +6,16 @@
 //
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "VWW_ColorsCameraViewController.h"
 #import "VWW_ColorPickerView.h"
 #import "VWW_ColorsCameraPreviewView.h"
 #import "VWW_ColorPickerImageViewCrosshairsView.h"
+#import "VWW_ColorsCameraPreviewView.h"
 
-@interface VWW_ColorsCameraViewController ()
+@interface VWW_ColorsCameraViewController () <VWW_ColorsDelegate,
+    VWW_ColorCameraPreviewViewDelegate,
+    AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, retain) IBOutlet VWW_ColorsCameraPreviewView* cameraPreview;
 @property (retain, nonatomic) IBOutlet UILabel *lblColorName;
 @property (retain, nonatomic) IBOutlet UILabel *lblColorDetails;
@@ -139,6 +143,11 @@
     
 }
 
+#pragma mark - Implements VWW_ColorCameraPreviewViewDelegate
+-(void)vww_ColorsCameraPreviewView:(VWW_ColorsCameraPreviewView*)sender userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color{
+    
+}
+
 #pragma mark implements AVFoundation
 
 // For image resizing, see the following links:
@@ -158,22 +167,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Access each frame as raw data
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(imageBuffer,0);
-//    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
     size_t width = CVPixelBufferGetWidth(imageBuffer);
     size_t height = CVPixelBufferGetHeight(imageBuffer);
-//    void *src_buff = CVPixelBufferGetBaseAddress(imageBuffer);
+
 
     static bool hasRunOnce = NO;
     if(!hasRunOnce){
         NSLog(@"Camera is returning video frames with size %dx%d", (int)width, (int)height);
         hasRunOnce = YES;
     }
-    
-    
-    
-//    - (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size
-    
-        
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
 }
 
@@ -188,30 +190,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 }
 
 -(void)startCamera{
-//    AVCaptureSession *session = [[AVCaptureSession alloc] init];
-//	session.sessionPreset = AVCaptureSessionPresetMedium;
-//    
-//	CALayer *viewLayer = self.cameraPreview.layer;
-//	NSLog(@"viewLayer = %@", viewLayer);
-//    
-//	AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-//    
-//	captureVideoPreviewLayer.frame = self.cameraPreview.bounds;
-//	[self.cameraPreview.layer addSublayer:captureVideoPreviewLayer];
-//    
-//	AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-//    
-//	NSError *error = nil;
-//	AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
-//	if (!input) {
-//		// Handle the error appropriately.
-//		NSLog(@"ERROR: trying to open camera: %@", error);
-//	}
-//	[session addInput:input];
-//    
-//	[session startRunning];
-    
-    
     
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     
@@ -272,17 +250,12 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //    [self.cameraPreview setFrame:frame];
     
 	[session startRunning];
-    
-    
-
 
 }
 
 - (IBAction)handle_btnCamera:(id)sender {
     
 }
-
-
 
 
 

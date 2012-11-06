@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class VWW_ColorTableCellColorView;
+
 @protocol VWW_ColorTableCellColorViewDelegate <NSObject>
--(void)userSelectedColor:(UIColor*)color;
+-(void)vww_ColorTableCellColorView:(VWW_ColorTableCellColorView*)sender userSelectedColor:(UIColor*)color;
 @end
 
 @interface VWW_ColorTableCellColorView : UIView

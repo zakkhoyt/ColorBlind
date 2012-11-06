@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "VWW_Color.h"
 
+@class VWW_ColorViewContoller;
 
 @protocol VWW_ColorViewControllerDelegate <NSObject>
--(void)userIsDone;
+-(void)vww_ColorViewContollerUerIsDone:(VWW_ColorViewContoller*)sender;
 @end
 
 @interface VWW_ColorViewContoller : UIViewController

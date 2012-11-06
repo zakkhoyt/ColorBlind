@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-
 @interface VWW_GradientImageTableCell : UITableViewCell
 @property (retain, nonatomic) IBOutlet UILabel *lblFileName;
 @property (retain, nonatomic) IBOutlet UIImageView *imagePreview;

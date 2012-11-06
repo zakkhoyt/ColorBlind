@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
 #import "VWW_Colors.h"
-#import "VWW_ColorsCameraPreviewView.h"
 
-@interface VWW_ColorsCameraViewController : UIViewController <VWW_ColorsDelegate, VWW_ColorCameraPreviewViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface VWW_ColorsCameraViewController : UIViewController
 @property (nonatomic, retain) VWW_Colors* colors;
 @end

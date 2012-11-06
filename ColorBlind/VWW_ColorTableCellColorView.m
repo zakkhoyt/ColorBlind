@@ -33,7 +33,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if(self.delegate){
-        [self.delegate userSelectedColor:self.backgroundColor];
+        [self.delegate vww_ColorTableCellColorView:self userSelectedColor:self.backgroundColor];
     }
 }
 

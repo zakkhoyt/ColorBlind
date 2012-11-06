@@ -11,12 +11,11 @@
 
 #import "VWW_Color.h"
 
+// TODO: Should we include a sender?
 @protocol VWW_ColorsDelegate <NSObject>
-
 // Many controllers will receive event notifications when amy of the controllers changes the current color
 -(void)receiveCurrentColorChangeNotification:(NSNotification*)notification;
 -(void)receiveColorListChangeNotification:(NSNotification*)notification;
-
 @end
 
 #endif

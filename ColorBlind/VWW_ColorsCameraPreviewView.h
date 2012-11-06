@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "VWW_Colors.h"
 
+@class VWW_ColorsCameraPreviewView;
+
 @protocol VWW_ColorCameraPreviewViewDelegate <NSObject>
--(void)userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color;
+-(void)vww_ColorsCameraPreviewView:(VWW_ColorsCameraPreviewView*)sender userSelectedPixel:(CGPoint)pixel withColor:(VWW_Color*)color;
 @end
 
 @interface VWW_ColorsCameraPreviewView : UIView 
