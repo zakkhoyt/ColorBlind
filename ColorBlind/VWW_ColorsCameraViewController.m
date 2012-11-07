@@ -7,6 +7,7 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import "VWW_Color.h"
 #import "VWW_ColorsCameraViewController.h"
 #import "VWW_ColorPickerView.h"
 #import "VWW_ColorsCameraPreviewView.h"
@@ -28,8 +29,8 @@
 -(void)startCamera;
 - (IBAction)handle_btnCamera:(id)sender;
 
-// Image stuff
-- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size;
+//// Image stuff
+//- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size;
 @end
 
 @implementation VWW_ColorsCameraViewController
@@ -157,26 +158,66 @@
 -(void)captureOutput :(AVCaptureOutput *)captureOutput
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection{
-
-    // Check if it is safe to access the frame. This is probably not necessary now adays
-    if(!CMSampleBufferDataIsReady(sampleBuffer)){
-        NSLog( @"sample buffer is not ready. Skipping sample" );
-        return;
-    }
-
-    // Access each frame as raw data
+    
+    
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CVPixelBufferLockBaseAddress(imageBuffer,0);
+    // Lock the base address of the pixel buffer
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+    
+    // Get the number of bytes per row for the pixel buffer
+    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
+    
+    // Get the number of bytes per row for the pixel buffer
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+    // Get the pixel buffer width and height
     size_t width = CVPixelBufferGetWidth(imageBuffer);
     size_t height = CVPixelBufferGetHeight(imageBuffer);
+    
+    // Create a device-dependent RGB color space
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    
+    // Free up the context and color space
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    // Create an image object from the Quartz image
+    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+    
+    // Release the Quartz image
+    CGImageRelease(quartzImage);
+    
+    
+    // Let's grab the center pixel
+    NSUInteger halfWidth = floor(width/2.0);
+    NSUInteger halfHeight = floor(height/2.0);
+    
+    NSArray* pixels = [self getRGBAsFromImage:image atX:halfWidth andY:halfHeight count:1];
+
+    UIColor* uicolor = [pixels objectAtIndex:0];
+    CGFloat red, green, blue, alpha = 0;
+    [uicolor getRed:&red green:&green blue:&blue alpha:&alpha];
+    NSLog(@"r=%f g=%f b=%f a=%f", red, green, blue, alpha);
 
 
-    static bool hasRunOnce = NO;
-    if(!hasRunOnce){
-        NSLog(@"Camera is returning video frames with size %dx%d", (int)width, (int)height);
-        hasRunOnce = YES;
-    }
-    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+    VWW_Color* color = [self.colors colorFromRed:[NSNumber numberWithInt:red*100]
+                                           Green:[NSNumber numberWithInt:green*100]
+                                            Blue:[NSNumber numberWithInt:blue*100]];
+    
+    
+    self.lblColorName.text = color.name;
+    self.lblColorDetails.text = color.description;
+    self.currentColorView.backgroundColor = color.color;
+    self.crosshairsView.selectedPixel = CGPointMake(halfWidth, halfHeight);
+
 }
 
 #pragma mark Custom methods			
@@ -195,8 +236,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     // Set the captures resolution. This varies from device to device
 
-    
-    
     //          iPad43      iPhone4
     // * low    192x144     192x144
     // * medium 480x360     480x360
@@ -244,10 +283,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     else {
         NSLog(@"Could not add videoOutput");
     }
-    // ************************* configure callback for frame by frame access ********************
-    
-//    CGRect frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-//    [self.cameraPreview setFrame:frame];
     
 	[session startRunning];
 
@@ -260,13 +295,94 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 
 #pragma mark Image stuff....
-- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
-    UIGraphicsBeginImageContext(size);
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return destImage;
+//- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+//    UIGraphicsBeginImageContext(size);
+//    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+//    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return destImage;
+//}
+
+
+- (NSArray*)getRGBAsFromImage:(UIImage*)image atX:(int)xx andY:(int)yy count:(int)count
+{
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
+    
+    // First get the image into your data buffer
+    CGImageRef imageRef = [image CGImage];
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    unsigned char *rawData = (unsigned char*) calloc(height * width * 4, sizeof(unsigned char));
+    NSUInteger bytesPerPixel = 4;
+    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
+                                                 bitsPerComponent, bytesPerRow, colorSpace,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+    CGContextRelease(context);
+    
+    // Now your rawData contains the image data in the RGBA8888 pixel format.
+    int byteIndex = (bytesPerRow * yy) + xx * bytesPerPixel;
+    for (int ii = 0 ; ii < count ; ++ii)
+    {
+        CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
+        CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
+        CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
+        CGFloat alpha = (rawData[byteIndex + 3] * 1.0) / 255.0;
+        byteIndex += 4;
+        
+        UIColor *acolor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        [result addObject:acolor];
+    }
+    
+    free(rawData);
+    
+    return result;
 }
+
+//- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
+//{
+//    // Get a CMSampleBuffer's Core Video image buffer for the media data
+//    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+//    // Lock the base address of the pixel buffer
+//    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+//    
+//    // Get the number of bytes per row for the pixel buffer
+//    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
+//    
+//    // Get the number of bytes per row for the pixel buffer
+//    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+//    // Get the pixel buffer width and height
+//    size_t width = CVPixelBufferGetWidth(imageBuffer);
+//    size_t height = CVPixelBufferGetHeight(imageBuffer);
+//    
+//    // Create a device-dependent RGB color space
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    
+//    // Create a bitmap graphics context with the sample buffer data
+//    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+//                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+//    // Create a Quartz image from the pixel data in the bitmap graphics context
+//    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+//    // Unlock the pixel buffer
+//    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+//    
+//    // Free up the context and color space
+//    CGContextRelease(context);
+//    CGColorSpaceRelease(colorSpace);
+//    
+//    // Create an image object from the Quartz image
+//    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+//    
+//    // Release the Quartz image
+//    CGImageRelease(quartzImage);
+//    
+//    return (image);
+//}
 
 @end
 

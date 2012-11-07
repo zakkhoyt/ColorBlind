@@ -34,9 +34,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     if(touch.tapCount == 2){
-        if(self.delegate){
-            [self.delegate vww_ColorPickerImageViewUserDoubleTapped:self];
-        }
+        [self.delegate vww_ColorPickerImageViewUserDoubleTapped:self];
     }
     else if(touch.tapCount == 1){
         [self touchEvent:touches withEvent:event];
@@ -86,17 +84,8 @@
     // If the user has a retina display, UIImageView automatically scales the image by 200% each axis.
     // Since we have twice as big of an index, we need to scale our pointers.
     if(self.isUsingRetinaDisplay){
-        if([[[UIDevice currentDevice]model] compare:@"iPad"] == NSOrderedSame){
-            // Note: There is funky behaviour here (only iPad w/retina)
-            // Whenever y is an odd number, the returned color is incorrect.
-            // It *looks* like it's retreiveing the color from twice the x position over.
-            // That on top of it upscaling the image automatically
-            // Is there just a bug with my source images?
-            x = floor(point.x * 2);
-            y = floor(point.y * 2);
-            if(x % 2 != 0) x-=1;
-            if(y % 2 != 0) y-=1;
-        }
+        x *= 2;
+        y *= 4; // Not sure why this is necessary?
     }
     
     
@@ -117,9 +106,7 @@
                                                                          Green:[NSNumber numberWithInteger:(NSUInteger)green*(100/255.0)]
                                                                           Blue:[NSNumber numberWithInteger:(NSUInteger)blue*(100/255.0)]];
     // Tell our delegate of the color at pixel
-    if(self.delegate){
-        [self.delegate vww_ColorPickerImageView:self userSelectedPixel:point withColor:color];
-    }
+    [self.delegate vww_ColorPickerImageView:self userSelectedPixel:point withColor:color];
     
     CFRelease(pixelData);
     

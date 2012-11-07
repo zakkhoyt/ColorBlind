@@ -134,9 +134,7 @@
 //                                           Green:[NSNumber numberWithInteger:(NSUInteger)green*(100/255.0)]
 //                                            Blue:[NSNumber numberWithInteger:(NSUInteger)blue*(100/255.0)]];
 //    // Tell our delegate of the color at pixel
-//    if(self.delegate){
-//        [self.delegate userSelectedPixel:point withColor:color];
-//    }
+//    [self.delegate userSelectedPixel:point withColor:color];
 //    
 //    CFRelease(pixelData);
 //    
@@ -151,9 +149,8 @@
 //    // TEMP: This is just soem junk to return for now. 
     VWW_Color* color = self.colors.currentColor;
     // Tell our delegate of the color at pixel
-    if(self.delegate){
-        [self.delegate vww_ColorsCameraPreviewView:self userSelectedPixel:point withColor:color];
-    }
+    [self.delegate vww_ColorsCameraPreviewView:self userSelectedPixel:point withColor:color];
+
 
 
     return color;

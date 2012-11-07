@@ -89,37 +89,37 @@
     switch(indexPath.row){
         case 0:{
             label = @"gradient_00";
-            image = [UIImage imageNamed:@"gradient_00_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_00.png"];
             break;
         }
         case 1:{
             label = @"gradient_01";
-            image = [UIImage imageNamed:@"gradient_01_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_01.png"];
             break;
         }
         case 2:{
             label = @"gradient_02";
-            image = [UIImage imageNamed:@"gradient_02_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_02.png"];
             break;
         }
         case 3:{
             label = @"gradient_03";
-            image = [UIImage imageNamed:@"gradient_03_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_03.png"];
             break;
         }
         case 4:{
             label = @"gradient_04";
-            image = [UIImage imageNamed:@"gradient_04_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_04.png"];
             break;
         }
         case 5:{
             label = @"gradient_05";
-            image = [UIImage imageNamed:@"gradient_05_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_05.png"];
             break;
         }
         case 6:{
             label = @"gradient_06";
-            image = [UIImage imageNamed:@"gradient_06_iPhone.png"];
+            image = [UIImage imageNamed:@"gradient_06.png"];
             break;
         }
         default:
@@ -175,38 +175,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSMutableString* imageName = [NSMutableString new];
     switch(indexPath.row){
         case 0:{
+            [imageName setString:@"gradient_00.png"];
             break;
         }
         case 1:{
+            [imageName setString:@"gradient_01.png"];
             break;
         }
         case 2:{
+            [imageName setString:@"gradient_02.png"];
             break;
         }
         case 3:{
+            [imageName setString:@"gradient_03.png"];
             break;
         }
         case 4:{
+            [imageName setString:@"gradient_04.png"];
             break;
         }
         case 5:{
+            [imageName setString:@"gradient_05.png"];
             break;
         }
         case 6:{
+            [imageName setString:@"gradient_06.png"];
             break;
         }
         default:
             break;
             
     }
-    
-    // Tell our delegate that a file was selected
-    if(self.delegate){
-        
-    }
 
+    // Tell our delegate that a file was selected
+    UIImage* image = [UIImage imageNamed:imageName];
+    [self.delegate vww_GradientImageTableViewController:self userSelectedNewImage:image];
+    
     // Dismiss this view back to calling view
     [self dismissModalViewControllerAnimated:YES];
 }

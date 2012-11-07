@@ -124,6 +124,12 @@
         colorViewController.color = self.colors.currentColor;
 		colorViewController.delegate = self;
 	}
+    else if ([segue.identifier isEqualToString:@"segue_VWW_GradientImageTableViewController"]){
+        //UINavigationController* navigationController = segue.destinationViewController;
+        VWW_GradientImageTableViewController* gradientImageTableViewContrller = segue.destinationViewController;
+        gradientImageTableViewContrller.delegate = self;
+    }
+    
 }
 
 
@@ -185,6 +191,7 @@
 -(void)vww_GradientImageTableViewController:(VWW_GradientImageTableViewController*)sender
                        userSelectedNewImage:(UIImage*)image{
     
+    self.colorPickerImageView.image = image;
 }
 
 #pragma mark Custom methods			

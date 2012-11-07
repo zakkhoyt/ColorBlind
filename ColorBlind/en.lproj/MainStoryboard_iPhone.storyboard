@@ -9,10 +9,10 @@
             <objects>
                 <viewController id="SvH-lV-LhK" customClass="VWW_ColorsPickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zpi-sB-r6u">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" image="gradient_01_iPhone.png" id="fHd-vy-FCG" customClass="VWW_ColorPickerImageView">
+                            <imageView contentMode="scaleToFill" image="gradient_01~iphone.png" id="fHd-vy-FCG" customClass="VWW_ColorPickerImageView">
                                 <rect key="frame" x="20" y="111" width="280" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -72,7 +72,7 @@
             <objects>
                 <viewController id="gbW-D5-jK7" customClass="VWW_ColorViewContoller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P1j-yp-hl1">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q3K-nA-dPp">
@@ -113,7 +113,7 @@
             <objects>
                 <tableViewController id="Yme-cT-93n" customClass="VWW_GradientImageTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="147" sectionHeaderHeight="22" sectionFooterHeight="22" id="00k-kD-xDX">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -159,16 +159,16 @@
             <objects>
                 <viewController id="gvD-oo-8N4" customClass="VWW_ColorsCameraViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z69-Md-gDm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Qpe-as-Pr3" customClass="VWW_ColorsCameraPreviewView">
-                                <rect key="frame" x="20" y="128" width="280" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="49" y="95" width="222" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" id="edr-AO-hE9" customClass="VWW_ColorPickerImageViewCrosshairsView">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="296"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,7 +188,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="197-7R-6qn">
-                                <rect key="frame" x="5" y="95" width="81" height="25"/>
+                                <rect key="frame" x="239" y="0.0" width="81" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="9"/>
                                 <state key="normal" title="Toggle Camera">
@@ -219,6 +219,7 @@
                         <outlet property="btnCamera" destination="197-7R-6qn" id="lco-dy-wJl"/>
                         <outlet property="cameraPreview" destination="Qpe-as-Pr3" id="kDY-7P-2yY"/>
                         <outlet property="crosshairsView" destination="edr-AO-hE9" id="U9D-2j-n1g"/>
+                        <outlet property="currentColorView" destination="g7W-Ho-4LL" id="CKb-on-W55"/>
                         <outlet property="lblColorDetails" destination="hlv-aW-wPx" id="YT7-OM-mge"/>
                         <outlet property="lblColorName" destination="bSy-5h-2dz" id="vwn-GY-rmI"/>
                         <segue destination="b5a-3Y-6Fq" kind="modal" identifier="segue_VWW_ColorViewController" id="e6I-DG-S0h"/>
@@ -226,58 +227,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvl-I3-xfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="1220"/>
+            <point key="canvasLocation" x="-31" y="1235"/>
         </scene>
         <!--Colors Slider View Controller - Sliders-->
         <scene sceneID="D73-KF-mjn">
             <objects>
                 <viewController id="JTs-CE-haq" customClass="VWW_ColorsSliderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Sl-bx-c4M">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="L0Y-RB-vBk" customClass="VWW_ColorPickerView">
-                                <rect key="frame" x="20" y="110" width="280" height="187"/>
+                                <rect key="frame" x="20" y="110" width="280" height="99"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="hvV-qh-kUG">
-                                <rect key="frame" x="-2" y="339" width="324" height="23"/>
+                                <rect key="frame" x="-2" y="251" width="324" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="handle_sliderRed:" destination="JTs-CE-haq" eventType="valueChanged" id="fYv-ci-m9W"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="unf-0Y-raS">
-                                <rect key="frame" x="-2" y="398" width="324" height="23"/>
+                                <rect key="frame" x="-2" y="310" width="324" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="handle_sliderGreen:" destination="JTs-CE-haq" eventType="valueChanged" id="akk-s9-ndE"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="CqS-Cl-mRh">
-                                <rect key="frame" x="-2" y="457" width="324" height="23"/>
+                                <rect key="frame" x="-2" y="369" width="324" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="handle_sliderBlue:" destination="JTs-CE-haq" eventType="valueChanged" id="lzV-Ct-bdY"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Red" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="hw0-gg-86D">
-                                <rect key="frame" x="20" y="310" width="280" height="21"/>
+                                <rect key="frame" x="20" y="222" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Green" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Czq-mT-r71">
-                                <rect key="frame" x="20" y="369" width="280" height="21"/>
+                                <rect key="frame" x="20" y="281" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Blue" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="HS9-4T-Uw7">
-                                <rect key="frame" x="20" y="428" width="280" height="21"/>
+                                <rect key="frame" x="20" y="340" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -342,7 +343,7 @@
             <objects>
                 <viewController id="xSh-6x-4cL" customClass="VWW_AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JGS-xI-HGU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="vww_logo.png" id="Q2E-SM-peo">
@@ -350,7 +351,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="------ news ------" textAlignment="right" id="ipQ-0H-SCg">
-                                <rect key="frame" x="0.0" y="283" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="283" width="320" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
@@ -392,7 +393,7 @@
             <objects>
                 <tableViewController id="w8o-os-NDS" customClass="VWW_ColorsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NTW-tb-4E6">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -492,112 +493,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gradient_01_iPhone.png" width="280" height="280"/>
+        <image name="gradient_01~iphone.png" width="280" height="280"/>
         <image name="vww_logo.png" width="810" height="810"/>
     </resources>
-    <classes>
-        <class className="VWW_AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_AboutViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lblAbout" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="lblAppTitle" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="lblNews" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="lblWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="VWW_ColorPickerImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorPickerImageView.h"/>
-        </class>
-        <class className="VWW_ColorPickerImageViewCrosshairsView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorPickerImageViewCrosshairsView.h"/>
-        </class>
-        <class className="VWW_ColorPickerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorPickerView.h"/>
-        </class>
-        <class className="VWW_ColorTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="blueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="colorView" candidateClass="VWW_ColorTableCellColorView"/>
-                <relationship kind="outlet" name="greenLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hexLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="redLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VWW_ColorTableCellColorView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorTableCellColorView.h"/>
-        </class>
-        <class className="VWW_ColorViewContoller" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorViewContoller.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_btnDone:"/>
-                <relationship kind="outlet" name="lblColorDetails" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblColorName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VWW_ColorsCameraPreviewView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorsCameraPreviewView.h"/>
-        </class>
-        <class className="VWW_ColorsCameraViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorsCameraViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_btnCamera:"/>
-                <relationship kind="outlet" name="btnCamera" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cameraPreview" candidateClass="VWW_ColorsCameraPreviewView"/>
-                <relationship kind="outlet" name="crosshairsView" candidateClass="VWW_ColorPickerImageViewCrosshairsView"/>
-                <relationship kind="outlet" name="currentColorView" candidateClass="VWW_ColorPickerView"/>
-                <relationship kind="outlet" name="lblColorDetails" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblColorName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VWW_ColorsPickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorsPickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_butLoadImage:"/>
-                <relationship kind="outlet" name="butLoadImage" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="colorPickerImageView" candidateClass="VWW_ColorPickerImageView"/>
-                <relationship kind="outlet" name="crosshairsView" candidateClass="VWW_ColorPickerImageViewCrosshairsView"/>
-                <relationship kind="outlet" name="currentColorView" candidateClass="VWW_ColorPickerView"/>
-                <relationship kind="outlet" name="lblColorDetails" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblColorName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VWW_ColorsSliderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorsSliderViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_sliderBlue:"/>
-                <relationship kind="action" name="handle_sliderGreen:"/>
-                <relationship kind="action" name="handle_sliderRed:"/>
-                <relationship kind="outlet" name="colorDetails" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="colorName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="colorView" candidateClass="VWW_ColorPickerView"/>
-                <relationship kind="outlet" name="sliderBlue" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderGreen" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderRed" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="VWW_ColorsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ColorsTableViewController.h"/>
-        </class>
-        <class className="VWW_GradientImageTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_GradientImageTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lblFileName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VWW_GradientImageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_GradientImageTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eG3-2g-7iZ"/>
+        <segue reference="e6I-DG-S0h"/>
     </inferredMetricsTieBreakers>
 </document>

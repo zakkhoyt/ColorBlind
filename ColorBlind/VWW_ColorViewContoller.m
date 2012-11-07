@@ -57,9 +57,7 @@
 }
 
 - (IBAction)handle_btnDone:(id)sender {
-    if(self.delegate){
-        [self.delegate vww_ColorViewContollerUerIsDone:self];
-    }
+    [self.delegate vww_ColorViewContollerUerIsDone:self];
 }
 
 - (void)dealloc {
