@@ -24,13 +24,11 @@
 @property (retain, nonatomic) IBOutlet VWW_ColorPickerImageViewCrosshairsView* crosshairsView;
 @property (retain, nonatomic) NSTimer* crosshairViewTimer;
 @property (retain, nonatomic) IBOutlet UIButton *btnCamera;
+@property dispatch_queue_t av_queue;// = dispatch_queue_create("com.vaporwarewolf.colorblind", NULL);
 -(void)drawCrosshairs;
 -(void)loadLocalizedStrings;
 -(void)startCamera;
 - (IBAction)handle_btnCamera:(id)sender;
-
-//// Image stuff
-//- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size;
 @end
 
 @implementation VWW_ColorsCameraViewController
@@ -42,11 +40,14 @@
 @synthesize crosshairViewTimer = _crosshairViewTimer;
 @synthesize btnCamera = _btnCamera;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+
+
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        self.av_queue = dispatch_queue_create("com.vaporwarewolf.colorblind", NULL);
     }
     return self;
 }
@@ -82,9 +83,9 @@
                                                         selector:@selector(drawCrosshairs)
                                                         userInfo:nil
                                                          repeats:YES];
-    
-    [self startCamera];
-    
+    dispatch_async(self.av_queue, ^{
+        [self startCamera];
+    });
 }
 
 - (void)viewDidUnload {
@@ -174,6 +175,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     size_t width = CVPixelBufferGetWidth(imageBuffer);
     size_t height = CVPixelBufferGetHeight(imageBuffer);
     
+
+    
     // Create a device-dependent RGB color space
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
@@ -199,25 +202,35 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Let's grab the center pixel
     NSUInteger halfWidth = floor(width/2.0);
     NSUInteger halfHeight = floor(height/2.0);
+
     
     NSArray* pixels = [self getRGBAsFromImage:image atX:halfWidth andY:halfHeight count:1];
 
     UIColor* uicolor = [pixels objectAtIndex:0];
     CGFloat red, green, blue, alpha = 0;
     [uicolor getRed:&red green:&green blue:&blue alpha:&alpha];
-    NSLog(@"r=%f g=%f b=%f a=%f", red, green, blue, alpha);
+//    NSLog(@"r=%f g=%f b=%f a=%f", red, green, blue, alpha);
 
 
     VWW_Color* color = [self.colors colorFromRed:[NSNumber numberWithInt:red*100]
                                            Green:[NSNumber numberWithInt:green*100]
                                             Blue:[NSNumber numberWithInt:blue*100]];
     
-    
-    self.lblColorName.text = color.name;
-    self.lblColorDetails.text = color.description;
-    self.currentColorView.backgroundColor = color.color;
-    self.crosshairsView.selectedPixel = CGPointMake(halfWidth, halfHeight);
 
+    static bool hasRunOnce = NO;
+    if(!hasRunOnce){
+        hasRunOnce = YES;
+        NSLog(@"Camera is outputting frames at %dx%d", (int)width, (int)height);
+        NSLog(@"We will be examinign pixel in row %d column %d", (int)(halfWidth * height), (int)halfHeight);
+    }
+  
+    
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        self.lblColorName.text = color.name;
+        self.lblColorDetails.text = color.description;
+        self.currentColorView.backgroundColor = color.color;
+        self.crosshairsView.selectedPixel = CGPointMake(halfWidth, halfHeight);
+    });
 }
 
 #pragma mark Custom methods			
@@ -243,9 +256,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // * photo  2048x1536   852x640
     
 //    session.sessionPreset = AVCaptureSessionPresetLow;
-//    session.sessionPreset = AVCaptureSessionPresetMedium;
+    session.sessionPreset = AVCaptureSessionPresetMedium;
 //    session.sessionPreset = AVCaptureSessionPresetHigh;
-	session.sessionPreset = AVCaptureSessionPresetPhoto;
+//	session.sessionPreset = AVCaptureSessionPresetPhoto;
 
 	CALayer *viewLayer = self.cameraPreview.layer;
 	NSLog(@"viewLayer = %@", viewLayer);
@@ -273,10 +286,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [cameraVideoSettings setValue:value forKey:key];
     [videoOutput setVideoSettings:cameraVideoSettings];
     [videoOutput setAlwaysDiscardsLateVideoFrames:YES];
-    // TODO: Are we going to need yet another queue? Test on an old slow device to see
-    //dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
-    [videoOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-    //  dispatch_release(queue);
+
+//    [videoOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
+    [videoOutput setSampleBufferDelegate:self queue:self.av_queue];
+    
+    
     if([session canAddOutput:videoOutput]){
         [session addOutput:videoOutput];
     }
@@ -295,14 +309,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 
 #pragma mark Image stuff....
-//- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
-//    UIGraphicsBeginImageContext(size);
-//    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-//    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    return destImage;
-//}
-
 
 - (NSArray*)getRGBAsFromImage:(UIImage*)image atX:(int)xx andY:(int)yy count:(int)count
 {
@@ -344,45 +350,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     return result;
 }
 
-//- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
-//{
-//    // Get a CMSampleBuffer's Core Video image buffer for the media data
-//    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-//    // Lock the base address of the pixel buffer
-//    CVPixelBufferLockBaseAddress(imageBuffer, 0);
-//    
-//    // Get the number of bytes per row for the pixel buffer
-//    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-//    
-//    // Get the number of bytes per row for the pixel buffer
-//    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-//    // Get the pixel buffer width and height
-//    size_t width = CVPixelBufferGetWidth(imageBuffer);
-//    size_t height = CVPixelBufferGetHeight(imageBuffer);
-//    
-//    // Create a device-dependent RGB color space
-//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-//    
-//    // Create a bitmap graphics context with the sample buffer data
-//    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
-//                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-//    // Create a Quartz image from the pixel data in the bitmap graphics context
-//    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
-//    // Unlock the pixel buffer
-//    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-//    
-//    // Free up the context and color space
-//    CGContextRelease(context);
-//    CGColorSpaceRelease(colorSpace);
-//    
-//    // Create an image object from the Quartz image
-//    UIImage *image = [UIImage imageWithCGImage:quartzImage];
-//    
-//    // Release the Quartz image
-//    CGImageRelease(quartzImage);
-//    
-//    return (image);
-//}
 
 @end
 
