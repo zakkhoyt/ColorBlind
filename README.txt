@@ -33,7 +33,7 @@ This project demonstrates the use of the following topics:
                 * outlets and actions
             
         * Picker (tab 3)
-            * CoreGraphics to render gradients an shapes
+            * CoreGraphics?
         * Camera (tab 4)
             * Extends on Picker tab and adds AVFoundation for camera image capture.
     
