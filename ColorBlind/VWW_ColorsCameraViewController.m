@@ -34,13 +34,6 @@
 @end
 
 @implementation VWW_ColorsCameraViewController
-@synthesize lblColorName = _lblColorName;
-@synthesize lblColorDetails = _lblColorDetails;
-@synthesize currentColorView = _currentColorView;
-@synthesize colors = _colors;
-@synthesize cameraPreview = _cameraPreview;
-@synthesize crosshairViewTimer = _crosshairViewTimer;
-@synthesize btnCamera = _btnCamera;
 
 
 
@@ -144,7 +137,7 @@
 {
     if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
         NSDictionary *userInfo = notification.userInfo;
-        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        VWW_Color* currentColor = userInfo[@"currentColor"];
         NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
     }
 }
@@ -232,7 +225,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     NSArray* pixels = [self getRGBAsFromImage:image atX:halfWidth andY:halfHeight count:1];
 
-    UIColor* uicolor = [pixels objectAtIndex:0];
+    UIColor* uicolor = pixels[0];
     CGFloat red, green, blue, alpha = 0;
     [uicolor getRed:&red green:&green blue:&blue alpha:&alpha];
 //    NSLog(@"r=%f g=%f b=%f a=%f", red, green, blue, alpha);

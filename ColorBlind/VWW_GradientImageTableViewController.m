@@ -14,7 +14,7 @@
 @end
 
 @implementation VWW_GradientImageTableViewController
-@synthesize data = _data;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

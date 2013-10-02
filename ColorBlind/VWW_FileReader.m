@@ -42,12 +42,12 @@
             continue;
         }
         
-        NSString* name =    (NSString*)[elements objectAtIndex:kNameIndex];
-        NSString* hex =     (NSString*)[elements objectAtIndex:kHexIndex];
-        NSNumber* red =     (NSNumber*)[elements objectAtIndex:kRedIndex];
-        NSNumber* green =   (NSNumber*)[elements objectAtIndex:kGreenIndex];
-        NSNumber* blue =    (NSNumber*)[elements objectAtIndex:kBlueIndex];
-        NSNumber* hue =     (NSNumber*)[elements objectAtIndex:kHueIndex];
+        NSString* name =    (NSString*)elements[kNameIndex];
+        NSString* hex =     (NSString*)elements[kHexIndex];
+        NSNumber* red =     (NSNumber*)elements[kRedIndex];
+        NSNumber* green =   (NSNumber*)elements[kGreenIndex];
+        NSNumber* blue =    (NSNumber*)elements[kBlueIndex];
+        NSNumber* hue =     (NSNumber*)elements[kHueIndex];
 
         // Create VWW_Color object with convenience method
         VWW_Color* color = [[VWW_Color alloc]initWithName:name hex:hex red:red green:green blue:blue hue:hue];

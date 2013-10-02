@@ -1,5 +1,5 @@
-This is a demo app that allows a user to pick and create colors and reference them against 
-a list of color definitions taken from http://en.wikipedia.org/wiki/List_of_colors.
+This is an app that allows a user to look up a color, by sight, and retrieve the name of that color.
+The color definitions taken from http://en.wikipedia.org/wiki/List_of_colors.
 
 This project demonstrates the use of the following topics:
 

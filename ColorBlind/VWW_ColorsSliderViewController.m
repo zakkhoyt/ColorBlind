@@ -32,16 +32,6 @@
 @end
 
 @implementation VWW_ColorsSliderViewController
-@synthesize colors = _colors;
-@synthesize sliderRed = _sliderRed;
-@synthesize sliderGreen = _sliderGreen;
-@synthesize sliderBlue = _sliderBlue;
-@synthesize colorView = _colorView;
-@synthesize colorName = _colorName;
-@synthesize colorDetails = _colorDetails;
-@synthesize currentRed = _currentRed;
-@synthesize currentGreen = _currentGreen;
-@synthesize currentBlue = _currentBlue;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,7 +57,7 @@
 	if ([segue.identifier isEqualToString:@"segue_VWW_ColorViewController"])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWW_ColorViewContoller* colorViewController = [[navigationController viewControllers]objectAtIndex:0];
+		VWW_ColorViewContoller* colorViewController = [navigationController viewControllers][0];
         colorViewController.color = self.colors.currentColor;
 		colorViewController.delegate = self;
 	}
@@ -81,7 +71,7 @@
 {
     if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
         NSDictionary *userInfo = notification.userInfo;
-        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        VWW_Color* currentColor = userInfo[@"currentColor"];
         NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
     }
 }

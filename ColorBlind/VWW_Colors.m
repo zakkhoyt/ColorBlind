@@ -19,7 +19,7 @@
 
 @implementation VWW_Colors
 
-@synthesize colors = _colors;
+
 
 -(id)init{
     self = [super init];
@@ -27,7 +27,7 @@
         NSString* path = [[NSBundle mainBundle] pathForResource:@"colors_complex" ofType:@"csv"];
         self.colors = [VWW_FileReader colorsFromFile:path];
         if(self.colors && self.colors.count > 0){
-            self.currentColor = (VWW_Color*)[self.colors objectAtIndex:0];
+            self.currentColor = (VWW_Color*)(self.colors)[0];
         }
         else{
             NSLog(@"ERROR at %s:%d", __FUNCTION__, __LINE__);
@@ -59,7 +59,7 @@
         return nil;
     }
     else{
-        return [self.colors objectAtIndex:index];
+        return (self.colors)[index];
     }
 }
 
@@ -74,7 +74,7 @@
     NSUInteger smallestDifference = 300; // 100+100+100 is the largest possible difference
     
     for(NSUInteger index = 0; index < self.colors.count; index++){
-        VWW_Color* color = [self.colors objectAtIndex:index];
+        VWW_Color* color = (self.colors)[index];
         NSUInteger diffRed = abs(color.red.integerValue - red.integerValue);
         NSUInteger diffGreen = abs(color.green.integerValue - green.integerValue);
         NSUInteger diffBlue = abs(color.blue.integerValue - blue.integerValue);
@@ -84,7 +84,7 @@
         }
     }
     
-    return (VWW_Color*)[self.colors objectAtIndex:closestIndex];
+    return (VWW_Color*)(self.colors)[closestIndex];
     
 }
 
@@ -121,7 +121,7 @@
     }
     
     int r = arc4random() % self.colors.count;
-    return (VWW_Color*)[self.colors objectAtIndex:r];
+    return (VWW_Color*)(self.colors)[r];
 }
 
 
@@ -135,14 +135,14 @@
     }
 
     for(NSUInteger index = 0; index < self.colors.count; index++){
-        VWW_Color* color = [self.colors objectAtIndex:index];
+        VWW_Color* color = (self.colors)[index];
         if([color.name caseInsensitiveCompare:newColor.name] == NSOrderedSame){
             [_currentColor release];
             _currentColor = color;
             [_currentColor retain];
 
             // Stuff color into an NSDictionary and sent it along with the notification. 
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObject:_currentColor forKey:@"currentColor"];
+            NSDictionary *userInfo = @{@"currentColor": _currentColor};
             [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED] object:self userInfo:userInfo];
             return YES;
         }
@@ -161,7 +161,7 @@
     }
     
     for(NSUInteger index = 0; index < self.colors.count; index++){
-        VWW_Color* color = [self.colors objectAtIndex:index];
+        VWW_Color* color = (self.colors)[index];
 
         CGFloat red = 0.0f;
         CGFloat green = 0.0f;
@@ -191,7 +191,7 @@
             [_currentColor retain];
             
             // Stuff color into an NSDictionary and sent it along with the NSNotification.
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObject:_currentColor forKey:@"currentColor"];
+            NSDictionary *userInfo = @{@"currentColor": _currentColor};
             [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED] object:self userInfo:userInfo];
             return YES;
         }

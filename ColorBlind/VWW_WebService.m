@@ -30,7 +30,7 @@
 
 
 @implementation VWW_WebService
-@synthesize newsConnection = _newsConnection;
+
 -(id)init{
     self = [super init];
     if(self){

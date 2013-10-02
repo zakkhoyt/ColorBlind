@@ -12,14 +12,6 @@
 @end
 
 @implementation VWW_Color
-@synthesize name = _name;
-@synthesize hex = _hex;
-@synthesize red = _red;
-@synthesize green = _green;
-@synthesize blue = _blue;
-@synthesize hue = _hue;
-@synthesize color = _color;
-
 - (void)dealloc
 {
     [_name release];

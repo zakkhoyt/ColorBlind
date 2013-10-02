@@ -15,8 +15,6 @@
 @end
 
 @implementation VWW_GradientImageTableCell
-@synthesize lblFileName;
-@synthesize imagePreview;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -35,8 +33,6 @@
 }
 
 - (void)dealloc {
-    [lblFileName release];
-    [imagePreview release];
     [super dealloc];
 }
 @end

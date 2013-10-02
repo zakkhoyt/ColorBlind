@@ -21,9 +21,6 @@
 @end
 
 @implementation VWW_ColorViewContoller
-@synthesize lblColorName = _lblColorName;
-@synthesize lblColorDetails = _lblColorDetails;
-@synthesize color = _color;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -12,20 +12,14 @@
 
 @interface VWW_AboutViewController ()  <VWW_WebServiceNewsDelegate>
 @property (retain, nonatomic) IBOutlet UITextView *lblAbout;
-@property (retain, nonatomic) IBOutlet UITextView *lblAppTitle;
 @property (retain, nonatomic) IBOutlet UITextView *lblNews;
 @property (retain, nonatomic) IBOutlet UIWebView *lblWebView;
+@property (retain, nonatomic) IBOutlet UILabel *lblAppTitle;
+
 -(void)loadLocalizedStrings;
 @end
 
 @implementation VWW_AboutViewController
-@synthesize colors = _colors;
-@synthesize lblAbout = _lblAbout;
-@synthesize lblAppTitle = _lblAppTitle;
-@synthesize lblNews = _lblNews;
-@synthesize lblWebView = _lblWebView;
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -57,6 +51,7 @@
     [self.lblAppTitle release];
     [self.lblNews release];
     [self.lblWebView release];
+    [self.lblAppTitle release];
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -86,9 +81,6 @@
     self.lblNews.text = news;
 }
 
--(void)setColors:(VWW_Colors *)colors{
-    _colors = colors;
-}
 
 
 @end

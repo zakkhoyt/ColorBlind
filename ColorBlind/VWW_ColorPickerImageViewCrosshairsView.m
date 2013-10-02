@@ -15,7 +15,6 @@
 @end
 
 @implementation VWW_ColorPickerImageViewCrosshairsView
-@synthesize selectedPixel = _selectedPixel;
 
 //- (id)initWithFrame:(CGRect)frame
 //{

@@ -14,13 +14,13 @@
 #import "VWW_ColorsCameraViewController.h"
 #import "VWW_WebService.h"
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @interface VWW_AppDelegate ()
 -(void)userDefaults;
 @end
 
 @implementation VWW_AppDelegate
-@synthesize window = _window;
-@synthesize colors = _colors;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -47,24 +47,32 @@
     // Share color array with all view controllers
     UITabBarController* tabBarController = (UITabBarController*)self.window.rootViewController;
     
-    VWW_AboutViewController* aboutTabViewController = (VWW_AboutViewController*)[[tabBarController viewControllers]objectAtIndex:kAboutTabIndex];
+    VWW_AboutViewController* aboutTabViewController = (VWW_AboutViewController*)[tabBarController viewControllers][kAboutTabIndex];
     [aboutTabViewController setColors:_colors];
     
-    VWW_ColorsTableViewController* colorsTableViewController = (VWW_ColorsTableViewController*)[[tabBarController viewControllers]objectAtIndex:kListTabIndex];
+    VWW_ColorsTableViewController* colorsTableViewController = (VWW_ColorsTableViewController*)[tabBarController viewControllers][kListTabIndex];
     [colorsTableViewController setColors:_colors];
     
-    VWW_ColorsSliderViewController* colorsSliderViewController = (VWW_ColorsSliderViewController*)[[tabBarController viewControllers]objectAtIndex:kSliderTabIndex];
+    VWW_ColorsSliderViewController* colorsSliderViewController = (VWW_ColorsSliderViewController*)[tabBarController viewControllers][kSliderTabIndex];
     [colorsSliderViewController setColors:_colors];
     
-    VWW_ColorsPickerViewController* colorsPickerViewController = (VWW_ColorsPickerViewController*)[[tabBarController viewControllers]objectAtIndex:kPickerTabIndex];
+    VWW_ColorsPickerViewController* colorsPickerViewController = (VWW_ColorsPickerViewController*)[tabBarController viewControllers][kPickerTabIndex];
     [colorsPickerViewController setColors:_colors];
     
-    VWW_ColorsCameraViewController* colorsCameraViewController = (VWW_ColorsCameraViewController*)[[tabBarController viewControllers]objectAtIndex:kCameraTabIndex];
+    VWW_ColorsCameraViewController* colorsCameraViewController = (VWW_ColorsCameraViewController*)[tabBarController viewControllers][kCameraTabIndex];
     [colorsCameraViewController setColors:_colors];
         
     // Set the current view controller to the About tab. This will show users instructions and news.
     [tabBarController setSelectedViewController:aboutTabViewController];
     
+    
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+//    [[UITabBar appearance] setSelectedImageTintColor:[UIColor smileGreenColor]];
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")){
+        [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.2 alpha:1.0 ]];
+    }
     return YES;
 }
 							

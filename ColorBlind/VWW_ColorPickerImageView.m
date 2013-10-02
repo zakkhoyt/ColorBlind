@@ -16,7 +16,7 @@
 @end
 
 @implementation VWW_ColorPickerImageView
-@synthesize colors = _colors;
+
 
 
 - (id)initWithCoder:(NSCoder *)coder {

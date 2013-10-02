@@ -36,14 +36,6 @@
 @end
 
 @implementation VWW_ColorsPickerViewController
-@synthesize lblColorName = _lblColorName;
-@synthesize lblColorDetails = _lblColorDetails;
-@synthesize currentColorView = _currentColorView;
-@synthesize colors = _colors;
-@synthesize colorPickerImageView = _colorPickerImageView;
-@synthesize crosshairViewTimer = _crosshairViewTimer;
-@synthesize butLoadImage = _butLoadImage;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -120,7 +112,7 @@
 	if ([segue.identifier isEqualToString:@"segue_VWW_ColorViewController"])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWW_ColorViewContoller* colorViewController = [[navigationController viewControllers]objectAtIndex:0];
+		VWW_ColorViewContoller* colorViewController = [navigationController viewControllers][0];
         colorViewController.color = self.colors.currentColor;
 		colorViewController.delegate = self;
 	}
@@ -139,7 +131,7 @@
 {
     if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
         NSDictionary *userInfo = notification.userInfo;
-        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        VWW_Color* currentColor = userInfo[@"currentColor"];
         NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
     }
 }

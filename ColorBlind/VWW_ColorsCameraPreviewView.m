@@ -17,7 +17,6 @@
 @end
 
 @implementation VWW_ColorsCameraPreviewView
-@synthesize colors = _colors;
 
 
 //- (id)initWithFrame:(CGRect)frame

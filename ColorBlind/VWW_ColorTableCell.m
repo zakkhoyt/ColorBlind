@@ -8,14 +8,6 @@
 #import "VWW_ColorTableCell.h"
 
 @implementation VWW_ColorTableCell
-@synthesize nameLabel = _nameLabel;
-@synthesize hexLabel = _hexLabel;
-@synthesize redLabel = _redLabel;
-@synthesize greenLabel = _greenLabel;
-@synthesize blueLabel = _blueLabel;
-@synthesize hueLabel = _hueLabel;
-@synthesize colorView = _colorView;
-
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

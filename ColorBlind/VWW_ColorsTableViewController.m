@@ -31,9 +31,6 @@ static const NSUInteger kHueTag = 105;
 @end
 
 @implementation VWW_ColorsTableViewController
-@synthesize colors = _colors;
-@synthesize data = _data;
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -109,7 +106,7 @@ static const NSUInteger kHueTag = 105;
 	if ([segue.identifier isEqualToString:@"segue_VWW_ColorViewController"])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWW_ColorViewContoller* colorViewController = [[navigationController viewControllers]objectAtIndex:0];
+		VWW_ColorViewContoller* colorViewController = [navigationController viewControllers][0];
         colorViewController.color = self.colors.currentColor;
 		colorViewController.delegate = self;
 	}
@@ -121,7 +118,7 @@ static const NSUInteger kHueTag = 105;
 {
     if ([[notification name] isEqualToString:[NSString stringWithFormat:@"%s", NC_CURRENT_COLOR_CHANGED]]){
         NSDictionary *userInfo = notification.userInfo;
-        VWW_Color* currentColor = [userInfo objectForKey:@"currentColor"];
+        VWW_Color* currentColor = userInfo[@"currentColor"];
         NSLog (@"%s:%d Received notification. New current color is %@. ", __FUNCTION__, __LINE__, currentColor.name);
     }
 }
@@ -141,9 +138,9 @@ static const NSUInteger kHueTag = 105;
     // Get the VWW_Color object from our data source and then
     // pass it to our colors object to notify all other controllers
     // of the current color.
-    NSMutableDictionary* d = (NSMutableDictionary*)[self.data objectAtIndex:indexPath.section];
-    NSArray* a = [d objectForKey:@"colors"];
-    VWW_Color* color = [a objectAtIndex:indexPath.row];
+    NSMutableDictionary* d = (NSMutableDictionary*)(self.data)[indexPath.section];
+    NSArray* a = d[@"colors"];
+    VWW_Color* color = a[indexPath.row];
     [self.colors setCurrentColor:color];
     
     [self performSegueWithIdentifier:@"segue_VWW_ColorViewController" sender:self];
@@ -162,11 +159,11 @@ static const NSUInteger kHueTag = 105;
     if(!self.data){
         // TODO; raise error?
     }
-    NSMutableDictionary* d = (NSMutableDictionary*)[self.data objectAtIndex:section];
+    NSMutableDictionary* d = (NSMutableDictionary*)(self.data)[section];
     if(!d){
         // TODO; raise error?
     }
-    NSArray* a = [d objectForKey:@"colors"];
+    NSArray* a = d[@"colors"];
     if(!a){
         // TODO; raise error?
     }
@@ -179,9 +176,9 @@ static const NSUInteger kHueTag = 105;
 {
     // We are using a custom table cell. See VWW_ColorTableCell.h
     VWW_ColorTableCell * cell = [tableView dequeueReusableCellWithIdentifier:@"VWW_ColorTableCell"];
-    NSMutableDictionary* d = (NSMutableDictionary*)[self.data objectAtIndex:indexPath.section];
-    NSArray* a = [d objectForKey:@"colors"];
-    VWW_Color* color = [a objectAtIndex:indexPath.row];
+    NSMutableDictionary* d = (NSMutableDictionary*)(self.data)[indexPath.section];
+    NSArray* a = d[@"colors"];
+    VWW_Color* color = a[indexPath.row];
     
     // Safety check
     if(!color){
@@ -207,7 +204,7 @@ static const NSUInteger kHueTag = 105;
 - (NSArray*)sectionIndexTitlesForTableView:(UITableView *)tableView {
     NSMutableArray* array = [[[NSMutableArray alloc]init]autorelease];
     for(NSUInteger index = 0; index < self.data.count; index++){
-        NSDictionary* dict = [self.data objectAtIndex:index];
+        NSDictionary* dict = (self.data)[index];
         NSString* headerTitle = [dict valueForKey:@"headerTitle"];
         [array addObject:headerTitle];
     }
