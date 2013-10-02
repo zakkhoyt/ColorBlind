@@ -215,7 +215,9 @@
     [self.delegate vww_GradientImageTableViewController:self userSelectedNewImage:image];
     
     // Dismiss this view back to calling view
-    [self dismissModalViewControllerAnimated:YES];
+//    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES
+                             completion:^{}];
 }
 
 #pragma mark Custom methods

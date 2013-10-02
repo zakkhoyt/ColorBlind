@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ColorBlind
+
+  Created by Zakk Hoyt on 10/1/13.
+
+*/
+
+
+"Settings" = "11Le settings";
+
+"This is where settings text will go %@" = "11Le content goes le here %@";

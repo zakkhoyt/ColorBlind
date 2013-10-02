@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F821F5AA-E6F8-4AB2-96EB-70F1467FD9BA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ColorBlind</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>96955B9B-71D8-4EA9-BEDB-00B59197EA5A</key>
+		<string>ssh://github.com/zakkhoyt/ColorBlind.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ColorBlind.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>96955B9B-71D8-4EA9-BEDB-00B59197EA5A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/zakkhoyt/ColorBlind.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>96955B9B-71D8-4EA9-BEDB-00B59197EA5A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>96955B9B-71D8-4EA9-BEDB-00B59197EA5A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ColorBlind</string>
+		</dict>
+	</array>
+</dict>
+</plist>

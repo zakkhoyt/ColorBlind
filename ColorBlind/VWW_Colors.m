@@ -24,7 +24,7 @@
 -(id)init{
     self = [super init];
     if(self){
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"colors_w" ofType:@"csv"];
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"colors_complex" ofType:@"csv"];
         self.colors = [VWW_FileReader colorsFromFile:path];
         if(self.colors && self.colors.count > 0){
             self.currentColor = (VWW_Color*)[self.colors objectAtIndex:0];

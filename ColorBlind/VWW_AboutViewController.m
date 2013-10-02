@@ -86,7 +86,9 @@
     self.lblNews.text = news;
 }
 
-
+-(void)setColors:(VWW_Colors *)colors{
+    _colors = colors;
+}
 
 
 @end

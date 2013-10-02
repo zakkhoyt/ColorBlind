@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  ColorBlind
+
+  Created by Zakk Hoyt on 10/1/13.
+
+*/
+
+
+"Settings" = "Settings";
+
+"This is where settings text will go %@" = "This is where settings text will go.";
+
+"a new one" = "a new one English";

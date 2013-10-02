@@ -23,7 +23,9 @@
 @property (retain, nonatomic) IBOutlet VWW_ColorPickerView *currentColorView;
 @property (retain, nonatomic) IBOutlet VWW_ColorPickerImageViewCrosshairsView* crosshairsView;
 @property (retain, nonatomic) NSTimer* crosshairViewTimer;
+@property (retain, nonatomic) IBOutlet UILabel *lblDisabled;
 @property (retain, nonatomic) IBOutlet UIButton *btnCamera;
+
 @property dispatch_queue_t av_queue;// = dispatch_queue_create("com.vaporwarewolf.colorblind", NULL);
 -(void)drawCrosshairs;
 -(void)loadLocalizedStrings;
@@ -58,6 +60,7 @@
     [_lblColorName release];
     [_lblColorDetails release];
     [_currentColorView release];
+    [_lblDisabled release];
     [super dealloc];
 }
 
@@ -83,9 +86,20 @@
                                                         selector:@selector(drawCrosshairs)
                                                         userInfo:nil
                                                          repeats:YES];
-    dispatch_async(self.av_queue, ^{
-        [self startCamera];
-    });
+    
+    
+    if([self isCameraAvailable]){
+        dispatch_async(self.av_queue, ^{
+            [self startCamera];
+        });
+    }
+    else{
+        
+        for(UIView *view in self.view.subviews){
+            view.hidden = YES;
+        }
+        self.lblDisabled.hidden = NO;
+    }
 }
 
 - (void)viewDidUnload {
@@ -107,6 +121,18 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark Private methods
+-(BOOL)isCameraAvailable{
+    NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    BOOL cameraFound = NO;
+    for (AVCaptureDevice *device in videoDevices) {
+        if (device.position == AVCaptureDevicePositionBack){
+            cameraFound = YES;
+        }
+    }
+    return cameraFound;
 }
 
 
@@ -255,8 +281,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // * hight  1920x1080   1280x720
     // * photo  2048x1536   852x640
     
-//    session.sessionPreset = AVCaptureSessionPresetLow;
-    session.sessionPreset = AVCaptureSessionPresetMedium;
+    session.sessionPreset = AVCaptureSessionPresetLow;
+//    session.sessionPreset = AVCaptureSessionPresetMedium;
 //    session.sessionPreset = AVCaptureSessionPresetHigh;
 //	session.sessionPreset = AVCaptureSessionPresetPhoto;
 

@@ -10,5 +10,4 @@
 
 @interface VWW_FileReader : NSObject
 +(NSMutableArray*)colorsFromFile:(NSString*)path;
-
 @end

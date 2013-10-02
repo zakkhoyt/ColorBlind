@@ -14,6 +14,9 @@
 - (IBAction)handle_btnDone:(id)sender;
 @property (retain, nonatomic) IBOutlet UILabel *lblColorName;
 @property (retain, nonatomic) IBOutlet UILabel *lblColorDetails;
+@property (retain, nonatomic) IBOutlet UILabel *lblRed;
+@property (retain, nonatomic) IBOutlet UILabel *lblGreen;
+@property (retain, nonatomic) IBOutlet UILabel *lblBlue;
 
 @end
 
@@ -37,8 +40,10 @@
     
     self.view.backgroundColor = self.color.color;
     self.lblColorName.text = self.color.name;
-    self.lblColorDetails.text = self.color.description;
-    
+    self.lblColorDetails.text = self.color.hex;
+    self.lblRed.text = [NSString stringWithFormat:@"Red: %d", self.color.red.integerValue];
+    self.lblGreen.text = [NSString stringWithFormat:@"Green: %d", self.color.green.integerValue];
+    self.lblBlue.text = [NSString stringWithFormat:@"Blue: %d", self.color.blue.integerValue];
     [self loadLocalizedStrings];
 }
 
@@ -63,6 +68,9 @@
 - (void)dealloc {
     [_lblColorName release];
     [_lblColorDetails release];
+    [_lblRed release];
+    [_lblGreen release];
+    [_lblBlue release];
     [super dealloc];
 }
 - (void)viewDidUnload {

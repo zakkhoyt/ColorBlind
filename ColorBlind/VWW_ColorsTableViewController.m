@@ -145,6 +145,8 @@ static const NSUInteger kHueTag = 105;
     NSArray* a = [d objectForKey:@"colors"];
     VWW_Color* color = [a objectAtIndex:indexPath.row];
     [self.colors setCurrentColor:color];
+    
+    [self performSegueWithIdentifier:@"segue_VWW_ColorViewController" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -199,6 +201,7 @@ static const NSUInteger kHueTag = 105;
     return cell;
     
 }
+
 
 // This method is asking for the letters to use in the scrubber for the tableview
 - (NSArray*)sectionIndexTitlesForTableView:(UITableView *)tableView {
