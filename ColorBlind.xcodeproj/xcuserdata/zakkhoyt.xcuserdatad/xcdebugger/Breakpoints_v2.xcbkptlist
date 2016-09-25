@@ -80,7 +80,7 @@
             startingLineNumber = "86"
             endingLineNumber = "86"
             landmarkName = "-getColorOfPixelAtPoint:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,7 +96,7 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "-getColorOfPixelAtPoint:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
